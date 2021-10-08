@@ -20,7 +20,7 @@ public class TP1_manipNombresInt_BRUN_VERCEIL {
         int nb3 = 0; // Création des 2 variables recevant les 2 entiers rentrés par l'utilisateur.
         int nb2 = 0;
         
-        Scanner sc = new Scanner(System.in); //
+        Scanner sc = new Scanner(System.in); // commande de demande d'entrée pour l'utilsateurs 
         System.out.println("Entrez un premier nombre :"); // On affiche à l'utilisateur qu'il doit entrer un 1ère nombre.
         nb3 =sc.nextInt(); // On récupère le 1er entier dans notre première variable
         System.out.println("Entrez un deuxième nombre :"); // On affiche à l'utilisateur qu'il doit rentrer un 2ème nombre.
