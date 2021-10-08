@@ -28,9 +28,14 @@ public class TP1_manipNombresInt_BRUN_VERCEIL {
         System.out.println("Nombre 1 : "+ nb1); // On affiche notre premier nombre.
         System.out.println("Nombre 2 : "+ nb2); // On affiche notre second nombre.
         
-        System.out.println("La somme de vos deux nombre est "+(nb1+nb2));
-        System.out.println("La différence de vos deux nombre est "+(nb1-nb2));        
-        System.out.println("Le produit de vos deux nombre est "+(nb1*nb2));        
+        System.out.println("La somme de vos deux nombre est "+(nb1+nb2)); // Affichage de la somme de nos 2 nombres
+        System.out.println("La différence de vos deux nombre est "+(nb1-nb2)); // Affichage de la différences des 2 nombres
+        System.out.println("Le produit de vos deux nombre est "+(nb1*nb2)); // Affichage du produit de nos 2 nombres
+        
+        //Ajoutez ensuite une ligne pour afficher le quotient entier et le reste de la division euclidienne du
+        // premier par le second. Pour cela on utilisera deux opérateurs / (division) et % (reste de la division
+        // euclidienne). Voir le point cours ci-après.
+        
         
         
     }
