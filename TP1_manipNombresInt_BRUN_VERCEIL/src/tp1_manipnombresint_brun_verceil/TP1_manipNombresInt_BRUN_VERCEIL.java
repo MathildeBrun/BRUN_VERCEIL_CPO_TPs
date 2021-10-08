@@ -5,6 +5,8 @@ TP1 manipNombresInt
  */
 package tp1_manipnombresint_brun_verceil;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Mathilde
@@ -20,17 +22,16 @@ public class TP1_manipNombresInt_BRUN_VERCEIL {
         
         Scanner sc = new Scanner(System.in); //
         System.out.println("Entrez un premier nombre :"); // On affiche à l'utilisateur qu'il doit entrer un 1ère nombre.
-        n1 =sc.nextInt(); // On récupère le 1er entier dans notre première variable
+        nb1 =sc.nextInt(); // On récupère le 1er entier dans notre première variable
         System.out.println("Entrez un deuxième nombre :"); // On affiche à l'utilisateur qu'il doit rentrer un 2ème nombre.
-        n1 =sc.nextInt(); // On récupère le 2ème entier dans notre deuxième variable
+        nb1 =sc.nextInt(); // On récupère le 2ème entier dans notre deuxième variable
         System.out.println("Nombre 1 : "+ nb1); // On affiche notre premier nombre.
         System.out.println("Nombre 2 : "+ nb2); // On affiche notre second nombre.
         
         System.out.println("La somme de vos deux nombre est "+(nb1+nb2));
         System.out.println("La différence de vos deux nombre est "+(nb1-nb2));        
         System.out.println("La somme de vos deux nombre est "+(nb1*nb2));        
-        //Affichez ensuite à l’écran la somme de ces deux nombres, leur différence,
-        //et leur produit, avec un message de votre choix
+        
         
     }
 }
