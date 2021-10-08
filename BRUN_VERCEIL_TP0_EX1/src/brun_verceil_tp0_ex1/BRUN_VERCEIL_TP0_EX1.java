@@ -1,21 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+BRUN VERCEIL FGE2 TDC
+TP0 Exercice 1
+27/09/21
  */
-package brun_verceil_tp0_ex1;
+package exo1;
+
+import java.util.Scanner;
 
 /**
  *
  * @author Mathilde
  */
-public class BRUN_VERCEIL_TP0_EX1 {
+public class Exo1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+        
+    String prenom;
+    Scanner sc;
+    sc = new Scanner(System.in);
+    System.out.println("Bonjour, quel est votre prenom ?");
+    prenom = sc.nextLine();        
+    System.out.println("Au revoir " + prenom);
+        
+    }    
 }
