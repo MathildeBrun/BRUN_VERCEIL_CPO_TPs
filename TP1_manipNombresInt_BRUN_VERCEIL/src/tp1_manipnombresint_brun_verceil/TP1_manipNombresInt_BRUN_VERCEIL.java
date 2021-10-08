@@ -32,12 +32,10 @@ public class TP1_manipNombresInt_BRUN_VERCEIL {
         System.out.println("La différence de vos deux nombre est "+(nb1-nb2)); // Affichage de la différences des 2 nombres
         System.out.println("Le produit de vos deux nombre est "+(nb1*nb2)); // Affichage du produit de nos 2 nombres
         
-        //Ajoutez ensuite une ligne pour afficher le quotient entier et le reste de la division euclidienne du
-        // premier par le second. Pour cela on utilisera deux opérateurs / (division) et % (reste de la division
-        // euclidienne). Voir le point cours ci-après.
-        
-        System.out.println("Le quotien entier du 1er nombre par le 2ème est : "+(nb1/nb2));
+        System.out.println("Le quotien entier du 1er nombre par le 2ème est : "+(nb1/nb2)); // On divise le
+        // 1er nombre par le 2ème et on a le résultat arrondi à l'entier inférieur.
         System.out.println("Le reste de la division euclidienne du 1er nombre par le 2ème est : "+(nb1%nb2));
+        // On divise le 1er nombre par le 2ème et on affiche le reste de la division ou 0 si c'est une division parfaite.
         
         
     }
