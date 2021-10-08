@@ -36,7 +36,7 @@ public class TP1_manipNombresInt_BRUN_VERCEIL {
         // premier par le second. Pour cela on utilisera deux opérateurs / (division) et % (reste de la division
         // euclidienne). Voir le point cours ci-après.
         
-        
+        System.out.println();
         
     }
 }
