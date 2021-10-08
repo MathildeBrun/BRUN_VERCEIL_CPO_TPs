@@ -24,13 +24,13 @@ public class TP1_manipNombresInt_BRUN_VERCEIL {
         System.out.println("Entrez un premier nombre :"); // On affiche à l'utilisateur qu'il doit entrer un 1ère nombre.
         nb1 =sc.nextInt(); // On récupère le 1er entier dans notre première variable
         System.out.println("Entrez un deuxième nombre :"); // On affiche à l'utilisateur qu'il doit rentrer un 2ème nombre.
-        nb1 =sc.nextInt(); // On récupère le 2ème entier dans notre deuxième variable
+        nb2 =sc.nextInt(); // On récupère le 2ème entier dans notre deuxième variable
         System.out.println("Nombre 1 : "+ nb1); // On affiche notre premier nombre.
         System.out.println("Nombre 2 : "+ nb2); // On affiche notre second nombre.
         
         System.out.println("La somme de vos deux nombre est "+(nb1+nb2));
         System.out.println("La différence de vos deux nombre est "+(nb1-nb2));        
-        System.out.println("La somme de vos deux nombre est "+(nb1*nb2));        
+        System.out.println("Le produit de vos deux nombre est "+(nb1*nb2));        
         
         
     }
