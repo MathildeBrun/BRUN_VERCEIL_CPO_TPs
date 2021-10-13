@@ -31,14 +31,13 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         int numAl = generateurAleat.nextInt(100);
         int nbTent = 1;
         
-        System.out.println("Veuillez selecionner selection votre difficulté 1,2 ou 3:\n1) Facile\n2) Moyen\n3) Difficile\n4) Cauchemard");
+        System.out.println("Veuillez sélectionner selection votre difficulté :\n1) Facile\n2) Moyen\n3) Difficile\n4) Cauchemard");
         Scanner sc = new Scanner(System.in);
         choix = sc.nextInt();
         
         if (choix == 1); {
         
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
-            Scanner sc = new Scanner(System.in); //
             nbHum =sc.nextInt();
 
             while (nbHum!= numAl) {
@@ -53,8 +52,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 nbTent++;
             }
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
-            
-            
+        }   
             
         if (choix == 1); {
         
@@ -73,7 +71,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 nbTent++;
             }
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
-            
+        }
             
             
         if (choix == 2); {
@@ -136,6 +134,6 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             }
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }
-    }  
+    }
 
    
