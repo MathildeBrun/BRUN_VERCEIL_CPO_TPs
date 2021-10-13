@@ -53,26 +53,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             }
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }   
-            
-        if (choix == 1); {
-        
-            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
-            nbHum =sc.nextInt();
-
-            while (nbHum!= numAl) {
-                if (nbHum < numAl) {
-                    System.out.println("trop petit");
-                }
-                if (nbHum > numAl) {
-                    System.out.println("trop grand");
-                }
-                System.out.println("Veuillez entrer une nouvelle valeur :");
-                nbHum =sc.nextInt();
-                nbTent++;
-            }
-            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
-        }
-            
+              
             
         if (choix == 2); {
         
@@ -134,6 +115,9 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             }
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }
-    }
+        
+}   
 
-   
+
+
+
