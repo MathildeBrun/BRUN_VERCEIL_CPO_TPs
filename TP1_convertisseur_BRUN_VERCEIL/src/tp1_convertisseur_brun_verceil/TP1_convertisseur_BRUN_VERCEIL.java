@@ -49,6 +49,8 @@ public class TP1_convertisseur_BRUN_VERCEIL {
 
                
         double valeur = 0.0;
+        int conv = 0;
+        double answ = 0.0;
         Scanner sc = new Scanner(System.in); // commande de demande d'entrée pour l'utilsateurs 
         
         System.out.println("Bonjour, saisissez une valeur : ");
@@ -60,10 +62,37 @@ public class TP1_convertisseur_BRUN_VERCEIL {
         System.out.println("4) Celcius Vers Farenheit");
         System.out.println("5) Kelvin Vers Farenheit");
         System.out.println("6) Farenheit Vers Kelvin");
+        conv = sc.nextInt(); // On récupère le numéro de la conversion a effectuer
+        
+        if (conv == 1) {
+            answ = CelciusVersKelvin(valeur);
+            System.out.println(valeur + " degrés Celcius est égal à "+answ+" degrés Kelvin");
+        }
+        if (conv == 2) {
+            answ = KelvinVersCelcius(valeur);
+            System.out.println(valeur + " degrés Kelvin est égal à "+answ+" degrés Celcius");
+        }
+        if (conv == 3) {
+            answ = FarenheitVersCelcius(valeur);
+            System.out.println(valeur + " degrés Farenheit est égal à "+answ+" degrés Celcius");
+        }
+        if (conv == 4) {
+            answ = CelciusVersFarenheit(valeur);
+            System.out.println(valeur + " degrés Celcius est égal à "+answ+" degrés Farenheit");
+        }
+        if (conv == 5) {
+            answ = KelvinVersFarenheit(valeur);
+            System.out.println(valeur + " degrés Kelvin est égal à "+answ+" degrés Farenheit");
+        }
+        if (conv == 6) {
+            answ = FarenheitVersKelvin(valeur);
+            System.out.println(valeur + " degrés Farenheit est égal à "+answ+" degrés Kelvin");
+        }
+        else {
+            System.out.println("Numéro de conversion entré invalide.");        
+        }
+        
         
     }
     
 }
-
-//1) De Celcius vers Kelvin 2) De Kelvin vers Celcius … 
-//6) De Farenheit vers Kelvin 2 50 degré Kelvin est égal à -223.15 degrés Celcius
