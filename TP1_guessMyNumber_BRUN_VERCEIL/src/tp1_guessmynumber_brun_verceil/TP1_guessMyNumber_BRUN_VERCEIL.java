@@ -18,6 +18,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int choix = 0;
         Random generateurAleat = new Random();
         int nmb1 = generateurAleat.nextInt(100); // Génération de 5 nombres aléatoires
         int nmb2 = generateurAleat.nextInt(100);
@@ -30,23 +31,111 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         int numAl = generateurAleat.nextInt(100);
         int nbTent = 1;
         
-        System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
-        Scanner sc = new Scanner(System.in); //
-        nbHum =sc.nextInt();
+        System.out.println("Veuillez selecionner selection votre difficulté 1,2 ou 3:\n1) Facile\n2) Moyen\n3) Difficile\n4) Cauchemard");
+        Scanner sc = new Scanner(System.in);
+        choix = sc.nextInt();
         
-        while (nbHum!= numAl) {
-            if (nbHum < numAl) {
-                System.out.println("trop petit");
-            }
-            if (nbHum > numAl) {
-                System.out.println("trop grand");
-            }
-            System.out.println("Veuillez entrer une nouvelle valeur :");
+        if (choix == 1); {
+        
+            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
+            Scanner sc = new Scanner(System.in); //
             nbHum =sc.nextInt();
-            nbTent++;
+
+            while (nbHum!= numAl) {
+                if (nbHum < numAl) {
+                    System.out.println("trop petit");
+                }
+                if (nbHum > numAl) {
+                    System.out.println("trop grand");
+                }
+                System.out.println("Veuillez entrer une nouvelle valeur :");
+                nbHum =sc.nextInt();
+                nbTent++;
+            }
+            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+            
+            
+            
+        if (choix == 1); {
+        
+            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
+            nbHum =sc.nextInt();
+
+            while (nbHum!= numAl) {
+                if (nbHum < numAl) {
+                    System.out.println("trop petit");
+                }
+                if (nbHum > numAl) {
+                    System.out.println("trop grand");
+                }
+                System.out.println("Veuillez entrer une nouvelle valeur :");
+                nbHum =sc.nextInt();
+                nbTent++;
+            }
+            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+            
+            
+            
+        if (choix == 2); {
+        
+            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
+            nbHum =sc.nextInt();
+
+            while (nbHum!= numAl) {
+                if (nbHum < numAl) {
+                    System.out.println("trop petit");
+                }
+                if (nbHum > numAl) {
+                    System.out.println("trop grand");
+                }
+                System.out.println("Veuillez entrer une nouvelle valeur :");
+                nbHum =sc.nextInt();
+                nbTent++;
+            }
+            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+            
         }
-        System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
-                
-    }
-    
-}
+            
+            
+        if (choix == 3); {
+        
+            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
+            nbHum =sc.nextInt();
+
+            while (nbHum!= numAl) {
+                if (nbHum < numAl) {
+                    System.out.println("trop petit");
+                }
+                if (nbHum > numAl) {
+                    System.out.println("trop grand");
+                }
+                System.out.println("Veuillez entrer une nouvelle valeur :");
+                nbHum =sc.nextInt();
+                nbTent++;
+            }
+            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+            
+        }
+            
+        if (choix == 4); {
+        
+            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
+
+            nbHum =sc.nextInt();
+
+            while (nbHum!= numAl) {
+                if (nbHum < numAl) {
+                    System.out.println("trop petit");
+                }
+                if (nbHum > numAl) {
+                    System.out.println("trop grand");
+                }
+                System.out.println("Veuillez entrer une nouvelle valeur :");
+                nbHum =sc.nextInt();
+                nbTent++;
+            }
+            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+        }
+    }  
+
+   
