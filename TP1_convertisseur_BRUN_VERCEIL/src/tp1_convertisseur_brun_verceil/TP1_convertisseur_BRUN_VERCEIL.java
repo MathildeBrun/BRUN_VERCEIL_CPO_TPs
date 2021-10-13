@@ -16,7 +16,9 @@ import java.util.Scanner;
 public class TP1_convertisseur_BRUN_VERCEIL {
 
     /**
+     * @param tCelcius
      * @param args the command line arguments
+     * @return 
      */
     
     public static double CelciusVersKelvin (double tCelcius) {
