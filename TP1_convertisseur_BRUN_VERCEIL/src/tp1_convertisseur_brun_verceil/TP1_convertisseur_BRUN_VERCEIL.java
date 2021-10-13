@@ -57,7 +57,7 @@ public class TP1_convertisseur_BRUN_VERCEIL {
         
         System.out.println("Bonjour, saisissez une valeur : ");
         valeur = sc.nextDouble(); // On récupère la première valeur dans notre première variable
-        System.out.println("Saisissez la conversion que vous souhaiter effectuer :");
+        System.out.println("Saisissez la conversion que vous souhaiter effectuer :"); // Affichage de la question et des différents choix possibles de conversion
         System.out.println("1) Celcius Vers Kelvin");
         System.out.println("2) Kelvin Vers Celcius");
         System.out.println("3) Farenheit Vers Celcius");
@@ -66,32 +66,39 @@ public class TP1_convertisseur_BRUN_VERCEIL {
         System.out.println("6) Farenheit Vers Kelvin");
         conv = sc.nextInt(); // On récupère le numéro de la conversion a effectuer
         
+        // execution et affichage pour la première conversion
         if (conv == 1) {
             answ = CelciusVersKelvin(valeur);
             System.out.println(valeur + " degrés Celcius est égal à "+answ+" degrés Kelvin");
         }
+        // execution et affichage pour la 2ème conversion
         if (conv == 2) {
             answ = KelvinVersCelcius(valeur);
             System.out.println(valeur + " degrés Kelvin est égal à "+answ+" degrés Celcius");
         }
+        // execution et affichage pour la 3ème conversion
         if (conv == 3) {
             answ = FarenheitVersCelcius(valeur);
             System.out.println(valeur + " degrés Farenheit est égal à "+answ+" degrés Celcius");
         }
+        // execution et affichage pour la 4ème conversion
         if (conv == 4) {
             answ = CelciusVersFarenheit(valeur);
             System.out.println(valeur + " degrés Celcius est égal à "+answ+" degrés Farenheit");
         }
+        // execution et affichage pour la 5ème conversion
         if (conv == 5) {
             answ = KelvinVersFarenheit(valeur);
             System.out.println(valeur + " degrés Kelvin est égal à "+answ+" degrés Farenheit");
         }
+        // execution et affichage pour la 6ème conversion
         if (conv == 6) {
             answ = FarenheitVersKelvin(valeur);
             System.out.println(valeur + " degrés Farenheit est égal à "+answ+" degrés Kelvin");
         }
+        // Bonus : affichage d'une message d'erreur si le numéro entré ne correspond à aucune conversion.
         else {
-            System.out.println("Numéro de conversion entré invalide.");        
+            System.out.println("Numéro de conversion invalide.");        
         }
         
         
