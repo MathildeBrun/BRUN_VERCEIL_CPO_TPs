@@ -89,7 +89,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             
         if (choix == 3) {
             System.out.println("Vous avez 20 tentatives ");
-            System.out.println("Veuillez entrer un nombre entre 0 et 150 inclus :");
+            System.out.println("Veuillez entrer un nombre entre 0 et 200 inclus :");
             nbHum =sc.nextInt();
             numAl = generateurAleat.nextInt(150);
 
@@ -113,8 +113,8 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         }
             
         if (choix == 4) {
-        
-            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
+            System.out.println("Vous allez ");
+            System.out.println("Veuillez entrer un nombre entre 0 et 200 inclus :");
 
             nbHum =sc.nextInt();
 
