@@ -37,8 +37,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         Scanner sc = new Scanner(System.in);
         choix = sc.nextInt();
         
-        if (choix == 1); {
-        
+        if (choix == 1) {
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
             nbHum =sc.nextInt();
 
@@ -57,12 +56,13 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 System.out.println("Veuillez entrer une nouvelle valeur :");
                 nbHum =sc.nextInt();
                 nbTent++;
+                }
             }
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }   
               
             
-        if (choix == 2); {
+        if (choix == 2) {
             System.out.println("Vous avez 30 tentatives pour trouver le chiffre de l'ordinateur");
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
             nbHum =sc.nextInt();
@@ -87,7 +87,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         }
             
             
-        if (choix == 3); {
+        if (choix == 3) {
             System.out.println("Vous avez 20 tentatives ");
             System.out.println("Veuillez entrer un nombre entre 0 et 150 inclus :");
             nbHum =sc.nextInt();
@@ -112,7 +112,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             }
         }
             
-        if (choix == 4); {
+        if (choix == 4) {
         
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
 
@@ -132,7 +132,4 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }
     }
-
-}
-
 }
