@@ -39,7 +39,7 @@ public class TP1_stats_BRUN_VERCEIL {
 
     for (i=1; i<=m; i++) {
         int nb = generateurAleat.nextInt(5);
-        face[nb-1]= int(face[nb-1])+1;
+        face[nb-1]= face[nb-1]++;
     }
     
     System.out.print(face[0]+ ", "+face[1]+", "+face[2]+", "+face[3]+", "+face[4]+", "+face[5]);
