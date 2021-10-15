@@ -41,25 +41,26 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
             nbHum =sc.nextInt();
 
-            while (nbHum!= numAl) {
+            while (nbHum != numAl) {
                 if (nbHum < (5*numAl)) {
                     System.out.println("Beaucoup trop petit");
                 }
                 if (nbHum > (5*numAl)) {
                     System.out.println("Beaucoup trop grand");
                 }
-                if (nbHum < numAl) {
+                if (nbHum < numAl && nbHum > (5*numAl)) {
                     System.out.println("Trop petit");
                 }
-                if (nbHum > numAl) {
+                if (nbHum > numAl && nbHum < (5*numAl)) {
                     System.out.println("Trop grand");                
+                }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
                 nbHum =sc.nextInt();
                 nbTent++;
                 }
             }
-            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
-        }   
+            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives."); 
+
               
             
         if (choix == 2) {
@@ -113,17 +114,28 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         }
             
         if (choix == 4) {
-            System.out.println("Vous allez ");
+            System.out.println("Vous allez entrer dans le mode cauchemard.\n Ce mode sera votre pire ennemi\n La réponse que vous donnera l'ordinateur sera fausse avec une probabilitée de 30%\nBon courage");   
             System.out.println("Veuillez entrer un nombre entre 0 et 200 inclus :");
 
             nbHum =sc.nextInt();
 
             while (nbHum!= numAl) {
+                int num = generateurAleat.nextInt(100);
                 if (nbHum < numAl) {
-                    System.out.println("trop petit");
+                    if (num>= 30){
+                    System.out.println("trop petit");    
+                    }
+                    else {
+                    System.out.println("trop grand");        
+                    }
                 }
                 if (nbHum > numAl) {
-                    System.out.println("trop grand");
+                    if (num>= 30){
+                        System.out.println("trop grand");
+                    }
+                    else {
+                        System.out.println("trop petit");
+                    }
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
                 nbHum =sc.nextInt();
@@ -132,4 +144,5 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }
     }
+
 }
