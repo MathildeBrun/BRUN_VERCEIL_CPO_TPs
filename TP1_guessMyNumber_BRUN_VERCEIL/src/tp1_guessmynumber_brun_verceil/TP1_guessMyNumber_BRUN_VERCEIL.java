@@ -9,9 +9,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- *
- * @author Mathilde
- */
+* @author Mathilde
+*/
 public class TP1_guessMyNumber_BRUN_VERCEIL {
 
     /**
