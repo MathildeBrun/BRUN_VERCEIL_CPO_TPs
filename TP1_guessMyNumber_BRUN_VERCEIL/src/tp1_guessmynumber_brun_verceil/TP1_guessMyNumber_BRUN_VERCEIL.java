@@ -45,13 +45,13 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 if (nbHum < (5*numAl)) {
                     System.out.println("Beaucoup trop petit");
                 }
-                if (nbHum < numAl && nbHum > (5*numAl)) {
+                if ((nbHum < numAl) && (nbHum > (5*numAl))) {
                     System.out.println("Trop petit");
                 }
                 if (nbHum > (5*numAl)) {
                     System.out.println("Beaucoup trop grand");
                 }
-                if (nbHum > numAl && nbHum <  (5*numAl)) {
+                if ((nbHum > numAl) && (nbHum < (5*numAl))) {
                     System.out.println("Trop grand");                
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
@@ -143,5 +143,4 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
             System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }
     }
-
 }
