@@ -2,7 +2,7 @@
 BRUN VERCEIL FGE2 TDC
 TP1 guesseMyNumber
 08/10/21
- */
+*/
 package tp1_guessmynumber_brun_verceil;
 
 import java.util.Random;
@@ -60,7 +60,6 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 }
             System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
             }
-
             
         if (choix == 2) {
             System.out.println("Vous avez 30 tentatives pour trouver le chiffre de l'ordinateur");
@@ -85,8 +84,8 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
             }
         }
-            
-            
+        
+        
         if (choix == 3) {
             System.out.println("Vous avez 20 tentatives ");
             System.out.println("Veuillez entrer un nombre entre 0 et 200 inclus :");
@@ -113,8 +112,8 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
         }
             
         if (choix == 4) {
-            System.out.println("Vous allez entrer dans le mode cauchemard.\n Ce mode sera votre pire ennemi\n La réponse que vous donnera l'ordinateur sera fausse avec une probabilitée de 30%\nBon courage");   
-            System.out.println("Veuillez entrer un nombre entre 0 et 200 inclus :");
+            System.out.println("Vous allez entrer dans le mode cauchemard.\nCe mode sera votre pire ennemi\nLa réponse que vous donnera l'ordinateur sera fausse avec une probabilitée de 30%\nBon courage");
+            System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
 
             nbHum =sc.nextInt();
 
@@ -122,10 +121,10 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 int num = generateurAleat.nextInt(100);
                 if (nbHum < numAl) {
                     if (num>= 30){
-                    System.out.println("trop petit");    
+                    System.out.println("trop petit");
                     }
                     else {
-                    System.out.println("trop grand");        
+                    System.out.println("trop grand");
                     }
                 }
                 if (nbHum > numAl) {
