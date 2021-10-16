@@ -45,23 +45,22 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 if (nbHum < (5*numAl)) {
                     System.out.println("Beaucoup trop petit");
                 }
-                if (nbHum > (5*numAl)) {
-                    System.out.println("Beaucoup trop grand");
-                }
                 if (nbHum < numAl && nbHum > (5*numAl)) {
                     System.out.println("Trop petit");
                 }
-                if (nbHum > numAl && nbHum < (5*numAl)) {
+                if (nbHum > (5*numAl)) {
+                    System.out.println("Beaucoup trop grand");
+                }
+                if (nbHum > numAl && nbHum <  (5*numAl)) {
                     System.out.println("Trop grand");                
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
                 nbHum =sc.nextInt();
                 nbTent++;
                 }
+            System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
             }
-            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives."); 
 
-              
             
         if (choix == 2) {
             System.out.println("Vous avez 30 tentatives pour trouver le chiffre de l'ordinateur");
@@ -83,7 +82,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 System.out.println("Bien essayé mais les machines vous sont supérieures.");
             }
             else {
-                System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+                System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
             }
         }
             
@@ -109,7 +108,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 System.out.println("Bien essayé mais les machines vous sont supérieures.");
             }
             else {
-                System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+                System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
             }
         }
             
@@ -141,7 +140,7 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                 nbHum =sc.nextInt();
                 nbTent++;
             }
-            System.out.print("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
+            System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur. Vous avez fait "+nbTent+" tentatives.");
         }
     }
 
