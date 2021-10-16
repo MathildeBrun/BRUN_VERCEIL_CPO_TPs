@@ -2,22 +2,20 @@
 BRUN VERCEIL FGE2 TDC
 TP1 convertisseur
 08/10/21
- */
+*/
 package tp1_convertisseur_brun_verceil;
 
 import java.util.Scanner;
 
-/**
- *
+/*
  * @author Mathilde
- */
+*/
 
 
 public class TP1_convertisseur_BRUN_VERCEIL {
 
     /**
      * @param tCelcius
-     * @param args the command line arguments
      * @return 
      */
     
@@ -46,10 +44,7 @@ public class TP1_convertisseur_BRUN_VERCEIL {
         }
     
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-
-               
+              
         double valeur = 0.0;
         int conv = 0;
         double answ = 0.0;
@@ -100,8 +95,7 @@ public class TP1_convertisseur_BRUN_VERCEIL {
         else {
             System.out.println("Numéro de conversion invalide.");        
         }
-        
-        
-    }
     
+    }
+
 }
