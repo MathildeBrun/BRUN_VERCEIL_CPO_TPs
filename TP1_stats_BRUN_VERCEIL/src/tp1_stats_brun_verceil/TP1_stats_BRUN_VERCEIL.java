@@ -20,7 +20,7 @@ public class TP1_stats_BRUN_VERCEIL {
     public static void main(String[] args) {
     // Question 1        
         int[] face = new int[6]; // réservation de la mémoire
-        face[0]=0; // Mise dans chaque case de sa valeur
+        face[0]=0; // Initialisation de chaque case
         face[1]=0;
         face[2]=0;
         face[3]=0;
@@ -36,14 +36,14 @@ public class TP1_stats_BRUN_VERCEIL {
     // Question 3
     int i = 1;
     Random generateurAleat = new Random();
-
     for (i=1; i<=m; i++) {
         int nb = generateurAleat.nextInt(5);
-        face[nb-1]= face[nb-1]++;
+        face[nb]= face[nb]+1;
+    }
+    i=0;
+    for (i=0; i<6; i++) {
+        System.out.println("Le pourcentage de chiffre "+i+" généré aléatoirement est de : "+((100.*face[i])/m)+" %.");
     }
     
-    System.out.print(face[0]+ ", "+face[1]+", "+face[2]+", "+face[3]+", "+face[4]+", "+face[5]);
-    
     }
-    
 }
