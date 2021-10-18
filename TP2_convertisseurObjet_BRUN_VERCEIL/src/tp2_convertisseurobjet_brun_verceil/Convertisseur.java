@@ -18,17 +18,17 @@ public class Convertisseur {
     }
     
     public double CelciusVersKelvin (double tCelcius) {
-        nbConversions=nbConversions+1;
+        nbConversions++;
         return tCelcius += 274.15;
         }
     
     public double KelvinVersCelcius (double tKelvin) {
-        nbConversions=nbConversions+1;
+        nbConversions++;
         return tKelvin -= 274.15;
         }
     
     public double FarenheitVersCelcius (double tFarenheit) {
-        nbConversions=nbConversions+1;
+        nbConversions++;
         return tFarenheit = (tFarenheit - 32) / 1.8;
         }
     
@@ -38,6 +38,7 @@ public class Convertisseur {
         }
     
     public double KelvinVersFarenheit (double tKelvin) {
+        nbConversions--;
         return tKelvin = CelciusVersFarenheit(KelvinVersCelcius(tKelvin));
         }
     
