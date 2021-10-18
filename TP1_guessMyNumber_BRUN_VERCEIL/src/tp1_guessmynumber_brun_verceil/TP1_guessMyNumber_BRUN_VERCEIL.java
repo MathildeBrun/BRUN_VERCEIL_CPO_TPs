@@ -17,111 +17,137 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int choix = 0;
+        
+        
+        
         Random generateurAleat = new Random();
-        /*
-        int nmb1 = generateurAleat.nextInt(100); // Génération de 5 nombres aléatoires
+        
+        // Partie 1 Guess my number \\
+        
+        int nmb1 = generateurAleat.nextInt(100);
         int nmb2 = generateurAleat.nextInt(100);
         int nmb3 = generateurAleat.nextInt(100);
         int nmb4 = generateurAleat.nextInt(100);
         int nmb5 = generateurAleat.nextInt(100);
         System.out.println("Les 5 nombres générés aléatoirement sont : "+nmb1+", "+nmb2+", "+nmb3+", "+nmb4+", "+nmb5);
-        */
         
-        int nbHum;
-        int numAl = generateurAleat.nextInt(100);
-        int nbTent = 1;
         
+        // *Guess my number programe* \\
+        
+        // Initialisation des varialbe
+        int choix = 0;
+        int UserNumber; 
+        int RandomNumber = generateurAleat.nextInt(100);
+        int nbTentative = 1;
+        
+        // Sélection de la difficulté
         System.out.println("Veuillez sélectionner selection votre difficulté :\n1) Facile\n2) Moyen\n3) Difficile\n4) Cauchemard");
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); 
         choix = sc.nextInt();
         
+        // Facile : coup illimité \\
         if (choix == 1) {
             System.out.println("Vous êtes en mode facile.\nVotre nombre de coups est illimité.\nVeuillez entrer un nombre entre 0 et 100 inclus :");
-            nbHum =sc.nextInt();
+            UserNumber =sc.nextInt();
 
-            while (nbHum != numAl) {
-                if (nbHum < numAl) {
+            // boucle de demande, tant que l'utilisteur n'a pas trouvé le nombre
+            while (UserNumber != RandomNumber) {
+                if (UserNumber < RandomNumber) {
                     System.out.println("Trop petit");
                 }
-                if (nbHum > numAl) {
+                if (UserNumber > RandomNumber) {
                     System.out.println("Trop grand");                
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
-                nbHum =sc.nextInt();
-                nbTent++;
+                UserNumber =sc.nextInt();
+                nbTentative++;
                 }
-            System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTent+" tentatives.");
+            // L'utilisateur gagne
+            System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTentative+" tentatives.");
             }
             
+        
+        // Moyen : limité à 30 tentatives \\
         if (choix == 2) {
             System.out.println("Vous avez 30 tentatives pour trouver le chiffre de l'ordinateur");
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
-            nbHum =sc.nextInt();
+            UserNumber =sc.nextInt();
 
-            while (nbHum!= numAl && nbTent <=30) {
-                if (nbHum < numAl) {
+            // boucle de demande, nouvelle condition lié au nombre de tentative (variable indentée)
+            while (UserNumber!= RandomNumber && nbTentative <=30) {
+                if (UserNumber < RandomNumber) {
                     System.out.println("trop petit");
                 }
-                if (nbHum > numAl) {
+                if (UserNumber > RandomNumber) {
                     System.out.println("trop grand");
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
-                nbHum =sc.nextInt();
-                nbTent++;
+                UserNumber =sc.nextInt();
+                nbTentative++;
             }
-            if (nbTent>30) {
+            
+            // L'utilisateur perd ou gagne
+            if (nbTentative>30) {
                 System.out.println("Vous avez atteint le nombre de tentatives maximales.\nBien essayé mais les machines vous sont supérieures.");
             }
             else {
-                System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTent+" tentatives.\nVous avez triomphé des machines. Enfin pour le moment...");
+                System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTentative+" tentatives.\nVous avez triomphé des machines. Enfin pour le moment...");
             }
         }
         
-        
+        // Difficile : nombre de tentative : 20, domaine de cherche élargit de 100 à 200 \\
         if (choix == 3) {
             System.out.println("Vous avez 20 tentatives ");
             System.out.println("Veuillez entrer un nombre entre 0 et 200 inclus :");
-            nbHum =sc.nextInt();
-            numAl = generateurAleat.nextInt(150);
+            UserNumber =sc.nextInt();
+            RandomNumber = generateurAleat.nextInt(150);
 
-            while (nbHum!= numAl) {
-                if (nbHum < numAl) {
+            // boucle de demande, avec deux conditions (nombre trouvé, tentative indenté)
+            while (UserNumber!= RandomNumber) {
+                if (UserNumber < RandomNumber) {
                     System.out.println("trop petit");
                 }
-                if (nbHum > numAl) {
+                if (UserNumber > RandomNumber) {
                     System.out.println("trop grand");
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
-                nbHum =sc.nextInt();
-                nbTent++;
+                UserNumber =sc.nextInt();
+                nbTentative++;
             }
-            if (nbTent>20) {
+            
+            // L'utilisateur perd ou gagne
+            if (nbTentative>20) {
                 System.out.println("Bien essayé mais les machines vous sont supérieures.");
             }
             else {
-                System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTent+" tentatives.");
+                System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTentative+" tentatives.");
             }
         }
-            
+        
+        
+        // Cauchemard : tentative illimité \\
         if (choix == 4) {
             System.out.println("Vous allez entrer dans le mode cauchemard.\nCe mode sera votre pire ennemi\nLa réponse que vous donnera l'ordinateur sera fausse avec une probabilitée de 30%\nBon courage");
             System.out.println("Veuillez entrer un nombre entre 0 et 100 inclus :");
 
-            nbHum =sc.nextInt();
+            UserNumber =sc.nextInt();
 
-            while (nbHum!= numAl) {
-                int num = generateurAleat.nextInt(100);
-                if (nbHum < numAl) {
-                    if (num>= 30){
+            //Boucle de demande à deux conditions (nombre trouvé, tentative indenté)
+            while (UserNumber!= RandomNumber) {
+                
+                // Celon la RNG le programme renvoit l'indication opposé (30% de chance de mauvaise indication)
+                int RNG = generateurAleat.nextInt(100);
+                
+                if (UserNumber < RandomNumber) {
+                    if (RNG>= 30){
                     System.out.println("trop petit");
                     }
                     else {
                     System.out.println("trop grand");
                     }
                 }
-                if (nbHum > numAl) {
-                    if (num>= 30){
+                if (UserNumber > RandomNumber) {
+                    if (RNG>= 30){
                         System.out.println("trop grand");
                     }
                     else {
@@ -129,10 +155,12 @@ public class TP1_guessMyNumber_BRUN_VERCEIL {
                     }
                 }
                 System.out.println("Veuillez entrer une nouvelle valeur :");
-                nbHum =sc.nextInt();
-                nbTent++;
+                UserNumber =sc.nextInt();
+                nbTentative++;
             }
-            System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTent+" tentatives.\nVous avez triomphé des machines. Enfin pour le moment...");
+            
+            // L'utilisateur gagne
+            System.out.println("Bravo, vous avez trouvé la valeur de l'ordinateur.\nVous avez fait "+nbTentative+" tentatives.\nVous avez triomphé des machines. Enfin pour le moment...");
         }
     }
 }
