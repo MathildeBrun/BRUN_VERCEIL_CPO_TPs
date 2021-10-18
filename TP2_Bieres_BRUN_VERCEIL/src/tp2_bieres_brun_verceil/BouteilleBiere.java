@@ -9,14 +9,20 @@ package tp2_bieres_brun_verceil;
  *
  * @author Mathilde
  */
+
+// définition de la class "BouteilleBiere"
 public class BouteilleBiere {
     String nom;
     double degreAlcool;
     String brasserie;
     boolean ouverte;
+    
+// définition de l'action "lireEtiquette"
     public void lireEtiquette() { 
         System.out.println("Bouteille de " + nom +" (" + degreAlcool + " degres) \nBrasserie : " + brasserie ) ; 
     }
+    
+// défintion de l'action décapsuler
     public boolean Décapsuler() {
         if (ouverte == false) {
             ouverte = true;
@@ -28,14 +34,15 @@ public class BouteilleBiere {
         }
     }
     
+// définition du constructeur 
     public BouteilleBiere(String unNom, double unDegre, String uneBrasserie) {
         nom = unNom;
         degreAlcool = unDegre;
         brasserie = uneBrasserie;
         ouverte = false;
     }
-    
-    @Override
+// ReDéfinition de la façon dont affiche System.out.println()
+    @Override // Ecrassement de la methode originel
     public String toString() {
         String chaine_a_retourner;
         chaine_a_retourner = nom + " (" + degreAlcool + " degrés) Ouverte ? "; 

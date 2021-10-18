@@ -57,6 +57,8 @@ public class TP2_Bieres_BRUN_VERCEIL {
         System.out.println(uneTroisiemeBiere);
         System.out.println(uneQuatriemeBiere);
         
+        uneDeuxiemeBiere.lireEtiquette();
+        
     }
     
     
