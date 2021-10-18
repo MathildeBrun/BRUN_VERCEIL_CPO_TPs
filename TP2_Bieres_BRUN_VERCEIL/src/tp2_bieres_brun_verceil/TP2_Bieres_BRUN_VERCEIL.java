@@ -15,6 +15,8 @@ public class TP2_Bieres_BRUN_VERCEIL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /*
+        Questions précédentes à la 10.
         BouteilleBiere uneBiere = new BouteilleBiere() ; // Création du nouvel objet et affectation de ses attributs.
         uneBiere.nom = "Cuvée des trolls"; 
         uneBiere.degreAlcool = (float) 7.0 ;
@@ -24,10 +26,24 @@ public class TP2_Bieres_BRUN_VERCEIL {
         
         BouteilleBiere deuxiemeBiere = new BouteilleBiere() ; // Création du nouvel objet et affectation de ses attributs.
         deuxiemeBiere.nom = "Leffe"; 
-        deuxiemeBiere.degreAlcool = (float) 6.6 ;
+        deuxiemeBiere.degreAlcool = 6.6 ;
         deuxiemeBiere.brasserie = "Abbaye de Leffe";
         deuxiemeBiere.ouverte = false;
         deuxiemeBiere.lireEtiquette();
+        */
+        
+        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", 7.0 ,"Dubuisson") ;
+        uneBiere.lireEtiquette();
+        
+        BouteilleBiere uneDeuxiemeBiere = new BouteilleBiere("Goudale", 7.2 ,"Brasserie Goudale") ;
+        uneDeuxiemeBiere.lireEtiquette();
+        
+        BouteilleBiere uneTroisiemeBiere = new BouteilleBiere("Pastor'al", 8.5 ,"La Pastorale") ;
+        uneTroisiemeBiere.lireEtiquette();
+        
+        BouteilleBiere uneQuatriemeBiere = new BouteilleBiere("Delirium", 8.6 ,"ZooBrew") ;
+        uneQuatriemeBiere.lireEtiquette();
+
     }
     
     
