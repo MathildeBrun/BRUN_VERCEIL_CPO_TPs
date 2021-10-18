@@ -49,7 +49,13 @@ public class TP2_Bieres_BRUN_VERCEIL {
         uneQuatriemeBiere.Décapsuler();
         System.out.println(uneQuatriemeBiere.ouverte);
         
-
+        uneDeuxiemeBiere.Décapsuler();
+        
+        System.out.println(uneBiere);
+        System.out.println(uneDeuxiemeBiere);
+        System.out.println(uneTroisiemeBiere);
+        System.out.println(uneQuatriemeBiere);
+        
     }
     
     
