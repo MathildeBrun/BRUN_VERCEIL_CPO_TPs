@@ -51,6 +51,7 @@ public class TP2_Bieres_BRUN_VERCEIL {
         
         uneDeuxiemeBiere.Décapsuler();
         
+        // Question 13
         System.out.println(uneBiere);
         System.out.println(uneDeuxiemeBiere);
         System.out.println(uneTroisiemeBiere);
