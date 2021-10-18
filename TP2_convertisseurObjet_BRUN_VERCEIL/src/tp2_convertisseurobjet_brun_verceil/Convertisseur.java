@@ -11,7 +11,7 @@ package tp2_convertisseurobjet_brun_verceil;
  */
 public class Convertisseur {
     
-    int nbConversions = 0;    
+    int nbConversions;    
     
     public Convertisseur () { 
         nbConversions = 0 ;
@@ -38,12 +38,10 @@ public class Convertisseur {
         }
     
     public double KelvinVersFarenheit (double tKelvin) {
-        nbConversions=nbConversions+1;
         return tKelvin = CelciusVersFarenheit(KelvinVersCelcius(tKelvin));
         }
     
     public double FarenheitVersKelvin (double tFarenheit) {
-        nbConversions=nbConversions+1;
         return tFarenheit = FarenheitVersCelcius (CelciusVersKelvin(tFarenheit));
         }
     

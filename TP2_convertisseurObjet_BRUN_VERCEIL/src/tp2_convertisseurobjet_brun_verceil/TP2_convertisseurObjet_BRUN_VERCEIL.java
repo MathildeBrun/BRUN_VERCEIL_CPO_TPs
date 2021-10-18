@@ -20,6 +20,8 @@ public class TP2_convertisseurObjet_BRUN_VERCEIL {
         Convertisseur premieresConversions = new Convertisseur() ;
         premieresConversions.CelciusVersFarenheit(50);
         premieresConversions.KelvinVersCelcius(150);
+        premieresConversions.CelciusVersFarenheit(1234);
+
      
         Convertisseur deuxiemesConversions = new Convertisseur() ;
         deuxiemesConversions.KelvinVersFarenheit(1234);
