@@ -16,7 +16,7 @@ public class TP2_Bieres_BRUN_VERCEIL {
      */
     public static void main(String[] args) {
         /*
-        Questions précédentes à la 10.
+        Questions précédent la 10.
         BouteilleBiere uneBiere = new BouteilleBiere() ; // Création du nouvel objet et affectation de ses attributs.
         uneBiere.nom = "Cuvée des trolls"; 
         uneBiere.degreAlcool = (float) 7.0 ;
@@ -32,6 +32,7 @@ public class TP2_Bieres_BRUN_VERCEIL {
         deuxiemeBiere.lireEtiquette();
         */
         
+        // Déclaration de 4 bieres à l'aide du constructeur créé.
         BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", 7.0 ,"Dubuisson") ;
         uneBiere.lireEtiquette();
         
@@ -43,6 +44,11 @@ public class TP2_Bieres_BRUN_VERCEIL {
         
         BouteilleBiere uneQuatriemeBiere = new BouteilleBiere("Delirium", 8.6 ,"ZooBrew") ;
         uneQuatriemeBiere.lireEtiquette();
+        
+        // Utilisation de la méthode Décapsuler et vérification du changement de valeur de la variable "ouverte".
+        uneQuatriemeBiere.Décapsuler();
+        System.out.println(uneQuatriemeBiere.ouverte);
+        
 
     }
     
