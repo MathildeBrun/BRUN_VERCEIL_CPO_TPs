@@ -11,7 +11,7 @@ package tp2_convertisseurobjet_brun_verceil;
  */
 public class Convertisseur {
     
-    int nbConversions;    
+    int nbConversions = 0;    
     
     public Convertisseur () { 
         nbConversions = 0 ;
@@ -49,8 +49,7 @@ public class Convertisseur {
     
     @Override 
     public String toString () { 
-        return "nb de conversions"+ nbConversions;
+        return "nb de conversions "+ nbConversions;
     }
-
 }
 

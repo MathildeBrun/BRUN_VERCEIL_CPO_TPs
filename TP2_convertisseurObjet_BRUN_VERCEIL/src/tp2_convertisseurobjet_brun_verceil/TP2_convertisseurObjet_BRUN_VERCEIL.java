@@ -15,7 +15,19 @@ public class TP2_convertisseurObjet_BRUN_VERCEIL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Création de 2 objet de type Convertisseur et application de diverses conversions
+        Convertisseur premieresConversions = new Convertisseur() ;
+        premieresConversions.CelciusVersFarenheit(50);
+        premieresConversions.KelvinVersCelcius(150);
+     
+        Convertisseur deuxiemesConversions = new Convertisseur() ;
+        deuxiemesConversions.KelvinVersFarenheit(1234);
+        deuxiemesConversions.CelciusVersKelvin(93746);
+        
+        //Affichage du nombre de conversion effectuées par chaque objet.
+        System.out.println(premieresConversions);
+        System.out.println(deuxiemesConversions);
     }
     
 }
