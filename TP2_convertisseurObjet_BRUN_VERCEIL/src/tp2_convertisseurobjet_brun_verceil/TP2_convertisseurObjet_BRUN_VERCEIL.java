@@ -80,10 +80,5 @@ public class TP2_convertisseurObjet_BRUN_VERCEIL {
             answer = troisiemesConversions.FarenheitVersKelvin(valeur);
             System.out.println(valeur + " degrés Farenheit est égal à "+answer+" degrés Kelvin");
         }
-        // Bonus : affichage d'une message d'erreur si le numéro entré ne correspond à aucune convUtilisateurersion.
-        else {
-            System.out.println("Numéro de convUtilisateurersion invalide.");
-        }
-    }
-    
+    }  
 }
