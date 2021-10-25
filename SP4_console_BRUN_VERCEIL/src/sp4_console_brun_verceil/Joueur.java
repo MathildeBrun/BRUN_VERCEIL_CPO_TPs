@@ -26,7 +26,13 @@ public class Joueur {
         Couleur = uneCouleur;
     }
     public boolean ajouterJeton(Jeton nouveauJetonJoueur){
-        ListeJoueur = nouveauJetonJoueur;
-        nombreJetonsRestants++;
+        if (nombreJetonsRestants > 21){
+            return(false);
+        }
+        else {
+            ListeJetons[nombreJetonsRestants]  = nouveauJetonJoueur;
+            nombreJetonsRestants++;
+            return(true);
+        }
     }
 }
