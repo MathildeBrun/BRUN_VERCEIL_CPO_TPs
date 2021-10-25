@@ -36,6 +36,13 @@ public class Partie {
     }
     
     public void initialiserPartie() {
+        Jeton nouveauJetonJoueur;
+        for (int i =0; i<21; i++) {   
+            ListeJoueur[1].ajouterJeton(nouveauJetonJoueur);
+        }
+        for (int j= 0; j<21;j++) {
+            ListeJoueur[0].ajouterJeton(nouveauJetonJoueur);
+        }
         
     }
     
