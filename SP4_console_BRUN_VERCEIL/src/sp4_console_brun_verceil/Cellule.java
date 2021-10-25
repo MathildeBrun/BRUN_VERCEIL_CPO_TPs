@@ -11,40 +11,35 @@ package sp4_console_brun_verceil;
  */
 
 // Class "Cellule"
+
 public class Cellule {
     Jeton jetonCourant = null;
     boolean trouNoir = false;
     boolean desintégrateur = false;
-   
-   
     
  // Constructeur "Cellule"
     public Cellule(Jeton unJetonCourant, boolean unTrouNoir, boolean unDesintegrateur) {
     jetonCourant = unJetonCourant;
     trouNoir = unTrouNoir;
     desintégrateur = unDesintegrateur;
-     
-                   
-                   
-                   }
+    }
 
 // Methode affecterJeton
 
     public boolean affecterJeton(Jeton nouveauJetonCellule) { 
         
-    if (jetonCourant == null) {
-    jetonCourant = nouveauJetonCellule
-            return true
-                    }
-    
-    else {
-        return false
-        
-    } 
+        if (jetonCourant == null) {
+        jetonCourant = nouveauJetonCellule
+                return true
+        }
+
+        else {
+            return false
+        } 
                     
     
 
-}
+    }
 
     
     
