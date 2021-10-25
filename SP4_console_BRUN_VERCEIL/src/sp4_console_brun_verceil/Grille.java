@@ -9,16 +9,40 @@ package sp4_console_brun_verceil;
  *
  * @author Mathilde
  */
+// définition de la class Grille
 public class Grille {
     
+    Cellule [][] CellulesJeu = new Cellule [6][7];
     
+ // Constructeur "Cellule"
+    public Grille(Cellule [][] uneCellulesJeu) {
+        CellulesJeu = uneCellulesJeu;
+    }
+
+ // Methode ajouterJetonDansColonne(Jeton, int)
     
+    public boolean ajouterJetonDansColonne(Jeton nouveauJetonColonne, int nouvelleColonne) {
+        
+        // Vérification que la colonne est vide (on regarde la ligne la plus haute)
+        if (CellulesJeu[0][nouvelleColonne] != null) {   
+            return (false);
+        }
+        // Test de chaque cellule de la collogne tant qu'on en trouve pas une vide
+        else {
+            int i = 5;
+            while (CellulesJeu[i][nouvelleColonne] == null) {
+                i--;         
+            }
+        // On affecte le nouveaux jetons à la Cellule
+            return (CellulesJeu[i][nouvelleColonne].affecterJeton(nouveauJetonColonne));
+        }
+    }
     
 }
 
 /*                  
 // définition de la class "Voiture
- public class Voiture {
+ public class Voiture {s
     String Modele;
     String Marque;
     int PuissanceCV;
