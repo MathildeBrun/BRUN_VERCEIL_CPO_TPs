@@ -19,30 +19,22 @@ public class Cellule {
     
  // Constructeur "Cellule"
     public Cellule(Jeton unJetonCourant, boolean unTrouNoir, boolean unDesintegrateur) {
-    jetonCourant = unJetonCourant;
-    trouNoir = unTrouNoir;
-    desintégrateur = unDesintegrateur;
+        jetonCourant = unJetonCourant;
+        trouNoir = unTrouNoir;
+        desintégrateur = unDesintegrateur;
     }
 
 // Methode affecterJeton
 
     public boolean affecterJeton(Jeton nouveauJetonCellule) { 
-        
         if (jetonCourant == null) {
-        jetonCourant = nouveauJetonCellule;
-                return true;
+            jetonCourant = nouveauJetonCellule;
+            return(true);
         }
-
         else {
-            return false;
-        } 
-                    
-    
-
+            return(false);
+        }
     }
-
-    
-    
 }
 
    
