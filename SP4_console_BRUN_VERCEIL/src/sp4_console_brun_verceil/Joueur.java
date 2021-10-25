@@ -26,7 +26,7 @@ public class Joueur {
         Couleur = uneCouleur;
     }
     public boolean ajouterJeton(Jeton nouveauJetonJoueur){
-        
+        ListeJoueur = nouveauJetonJoueur;
         nombreJetonsRestants++;
     }
 }
