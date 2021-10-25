@@ -29,12 +29,12 @@ public class Cellule {
     public boolean affecterJeton(Jeton nouveauJetonCellule) { 
         
         if (jetonCourant == null) {
-        jetonCourant = nouveauJetonCellule
-                return true
+        jetonCourant = nouveauJetonCellule;
+                return true;
         }
 
         else {
-            return false
+            return false;
         } 
                     
     
@@ -73,6 +73,6 @@ public Voiture(String unModele, String uneMarque, int unePuissanceCV) {
         return chaine_a_retourner ; 
     }    
 }
-
+*/
     
 

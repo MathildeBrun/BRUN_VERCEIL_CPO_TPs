@@ -11,4 +11,36 @@ package sp4_console_brun_verceil;
  */
 public class Partie {
     
+    
 }
+
+
+
+/*                  
+// définition de la class "Voiture
+ public class Voiture {
+    String Modele;
+    String Marque;
+    int PuissanceCV;
+    Personne Proprietaire;
+
+public Voiture(String unModele, String uneMarque, int unePuissanceCV) {
+        Modele = unModele;
+        Marque = uneMarque;
+        PuissanceCV = unePuissanceCV;
+        Proprietaire = null;
+        
+    }
+    
+    
+    
+ // ReDéfinition de la façon dont affiche System.out.println()
+    @Override // Ecrassement de la methode originel
+    public String toString() {
+        String chaine_a_retourner;
+        chaine_a_retourner = Marque + " " + Modele + " " + PuissanceCV + "CV" ; 
+        return chaine_a_retourner ; 
+    }    
+}
+*/
+    
