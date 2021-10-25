@@ -20,11 +20,12 @@ public class Joueur {
     public Joueur(String unNom) {
         Nom = unNom;
     }
-
+    
     // Création des méthodes
     public void affecterCouleur(String uneCouleur) {
         Couleur = uneCouleur;
     }
+    
     public boolean ajouterJeton(Jeton nouveauJetonJoueur){
         if (nombreJetonsRestants > 21){
             return(false);
