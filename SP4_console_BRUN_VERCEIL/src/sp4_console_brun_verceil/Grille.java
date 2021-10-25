@@ -38,6 +38,18 @@ public class Grille {
         }
     }
     
+ // etreRemplie()  (on test tout les cases si une est vide elle n'est pas vide)
+    public boolean etreRemplie() {
+ 
+        for (int l = 0; l<6; l++ ) {
+            for (int c = 0; c<7; c++) {
+                if (CellulesJeu[l][c] == null) {
+                    return (false);
+                }
+            }
+        }
+        return (true);
+    }
 }
 
 /*                  
