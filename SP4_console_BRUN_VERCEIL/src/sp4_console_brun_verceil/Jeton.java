@@ -10,5 +10,12 @@ package sp4_console_brun_verceil;
  * @author Mathilde
  */
 public class Jeton {
+    String Couleur;
+    public Jeton(String uneCouleur) {
+        Couleur = uneCouleur;
+    }
+    public String lireCouleur(){
+        return(Couleur);
+    }
     
 }
