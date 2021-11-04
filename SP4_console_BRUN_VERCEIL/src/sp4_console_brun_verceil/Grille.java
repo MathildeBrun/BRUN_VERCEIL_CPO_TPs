@@ -68,7 +68,25 @@ public class Grille {
         }
     }
 
-// afficheGrilleSurConsole
+// affiche GrilleSurConsole
+    public void GrilleSurConsole() {
+        String affichageConsole="";
+        for (int i=0; i<7; i++) {
+            for (int j=0; i<6; j++){
+                if (CellulesJeu[i][j]==null){
+                    affichageConsole = "X";
+                }
+                else {
+                    if (CellulesJeu[i][j].Jeton.Couleur=="Rouge"){
+                        
+                    }
+                }
+                System.out.print(affichageConsole +"  ");
+            }
+            System.out.println("");
+        }
+    }
+    
     
     
     
@@ -131,5 +149,6 @@ public class Grille {
     // Scan diagonale droite 
     
     // Scan diagonale droite
-  
-} 
+    
+    
+}
