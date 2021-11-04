@@ -13,24 +13,29 @@ package sp4_console_brun_verceil;
 public class Grille {
     
     Cellule [][] CellulesJeu = new Cellule [6][7];
+
+    
+    
+    // Methodes \\
     
  // Constructeur "Cellule"
     public Grille(Cellule [][] uneCellulesJeu) {
         CellulesJeu = uneCellulesJeu;
     }
 
- // Methode ajouterJetonDansColonne(Jeton, int)
+    
+//ajouterJetonDansColonne(Jeton, int)
     
     public boolean ajouterJetonDansColonne(Jeton nouveauJetonColonne, int nouvelleColonne) {
         
-        // Vérification que la colonne est vide (on regarde la ligne la plus haute)
+        // Vérification que la colonne est pleine (on regarde la ligne la plus haute)
         if (CellulesJeu[0][nouvelleColonne] != null) {   
             return (false);
         }
-        // Test de chaque cellule de la collogne tant qu'on en trouve pas une vide
+        // Test de chaque cellule de la collonne tant qu'on en trouve pas une vide
         else {
             int i = 5;
-            while (CellulesJeu[i][nouvelleColonne] == null) {
+            while (CellulesJeu[i][nouvelleColonne] != null) {
                 i--;         
             }
         // On affecte le nouveaux jetons à la Cellule
@@ -38,7 +43,7 @@ public class Grille {
         }
     }
     
- // etreRemplie()  (on test tout les cases si une est vide elle n'est pas vide)
+ // etreRemplie()  : on test toute les cases, si une case est vide : la grille n'est pas vide
     public boolean etreRemplie() {
  
         for (int l = 0; l<6; l++ ) {
@@ -50,33 +55,54 @@ public class Grille {
         }
         return (true);
     }
-}
 
-/*                  
-// définition de la class "Voiture
- public class Voiture {s
-    String Modele;
-    String Marque;
-    int PuissanceCV;
-    Personne Proprietaire;
 
-public Voiture(String unModele, String uneMarque, int unePuissanceCV) {
-        Modele = unModele;
-        Marque = uneMarque;
-        PuissanceCV = unePuissanceCV;
-        Proprietaire = null;
+// viderGrille : vide la grille
+    public void viderGrille() {
+
+        for (int l = 0; l<6; l++ ) {
+            for (int c = 0; c<7; c++) {
+                CellulesJeu[l][c] = null;
+
+            }
+        }
+    }
+
+// afficheGrilleSurConsole
+    
+    
+    
+// celluleOccupee : test si la cellule est occupé
+    
+    public boolean celluleOccupee(int l, int c) {
         
+        if (CellulesJeu[l][c] == null){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
+// lireCouleurDuJeton
+    
+    public String lireCouleurDuJeton(int l, int c) {
+        return CellulesJeu[l][c].jetonCourant.lireCouleur();
+    }
+    
+// etreGagnantePourJoueur(Joueur)
     
     
- // ReDéfinition de la façon dont affiche System.out.println()
-    @Override // Ecrassement de la methode originel
-    public String toString() {
-        String chaine_a_retourner;
-        chaine_a_retourner = Marque + " " + Modele + " " + PuissanceCV + "CV" ; 
-        return chaine_a_retourner ; 
-    }    
-}
-*/
+  //  public 
+    // Scan vertical
     
+    
+    
+    // Scan horizontale 
+    
+    // Scan diagonale droite 
+    
+    // Scan diagonale droite
+    
+    
+} 
