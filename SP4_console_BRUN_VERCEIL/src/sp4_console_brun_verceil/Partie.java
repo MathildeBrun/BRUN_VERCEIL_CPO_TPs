@@ -28,20 +28,22 @@ public class Partie {
         Random generateurAleat = new Random();
         int num = generateurAleat.nextInt(1);
         if (num==1){
-            ListeJoueur[1].Couleur = "Rouge";
+            ListeJoueur[0].Couleur = "Rouge";
+            ListeJoueur[1].Couleur = "Jaune";
         }
         else {
-            ListeJoueur[1].Couleur = "Jaune";
+            ListeJoueur[0].Couleur = "Jaune";
+            ListeJoueur[1].Couleur = "Rouge";
         }
     }
     
     public void initialiserPartie() {
         for (int i =0; i<21; i++) {
-            Jeton JetonJoueur1 = new Jeton("jaune");
+            Jeton JetonJoueur1 = new Jeton(ListeJoueur[0].Couleur);
             ListeJoueur[0].ajouterJeton(JetonJoueur1);
         }
         for (int j= 0; j<21;j++) {
-            Jeton JetonJoueur2 = new Jeton("rouge");
+            Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
         
