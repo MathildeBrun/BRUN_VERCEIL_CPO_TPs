@@ -22,7 +22,7 @@ public class SP4_console_BRUN_VERCEIL {
         Scanner sc = new Scanner(System.in); 
         String nomJ1 = sc.next();
         System.out.println("Bien, merci à vous et bienvenue parmi nous "+nomJ1);
-        System.out.println("A présent, veuillez entrer le nom du premier joueur :");
+        System.out.println("A présent, veuillez entrer le nom du deuxième joueur :");
         String nomJ2 = sc.next();
         System.out.println("Bien, merci à vous et bienvenue parmi nous "+nomJ2);
         System.out.println("Bonne chance "+nomJ1+" et "+nomJ2+"\nQue le meilleur gagne !");

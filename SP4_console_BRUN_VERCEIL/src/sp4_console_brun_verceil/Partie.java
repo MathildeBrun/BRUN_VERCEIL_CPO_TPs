@@ -15,7 +15,7 @@ public class Partie {
     // Création des attributs
     Joueur ListeJoueur [] = new Joueur [2];
     Joueur joueurCourant;
-    Grille grilleJeu = new Grille();
+    Grille grilleJeu[][] = new Grille[6][7] ;
     
     // Création du constructeur
     public Partie (Joueur joueur1, Joueur joueur2) {
@@ -37,12 +37,12 @@ public class Partie {
     
     public void initialiserPartie() {
         for (int i =0; i<21; i++) {
-            Jeton nouveauJetonJoueur1;
-            Joueur.joueur1.ajouterJeton(nouveauJetonJoueur1);
+            Jeton JetonJoueur1 = new Jeton("jaune");
+            ListeJoueur[0].ajouterJeton(JetonJoueur1);
         }
         for (int j= 0; j<21;j++) {
-            Jeton nouveauJetonJoueur2;
-            ListeJoueur[0].ajouterJeton(nouveauJetonJoueur2);
+            Jeton JetonJoueur2 = new Jeton("rouge");
+            ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
         
     }

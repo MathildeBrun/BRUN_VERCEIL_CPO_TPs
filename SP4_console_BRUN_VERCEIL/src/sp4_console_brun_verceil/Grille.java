@@ -18,7 +18,7 @@ public class Grille {
     
     // Methodes \\
     
- // Constructeur "Cellule"
+ // Constructeur "Grille"
     public Grille(Cellule [][] uneCellulesJeu) {
         CellulesJeu = uneCellulesJeu;
     }
