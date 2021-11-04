@@ -87,22 +87,49 @@ public class Grille {
 // lireCouleurDuJeton
     
     public String lireCouleurDuJeton(int l, int c) {
-        return CellulesJeu[l][c].jetonCourant.lireCouleur();
+        return CellulesJeu[l][c].lireCouleurDuJeton();
     }
     
 // etreGagnantePourJoueur(Joueur)
     
     
-  //  public 
-    // Scan vertical
-    
-    
+    public boolean etreGagnantePourJoueur(Joueur UnJoueur){
+        
+        // Scan vertical    
+        
+        int nbJetonAligne = 0;
+        
+        for (int l = 0; l<6; l++ ) {
+            for (int c = 0; c<7; c++) {
+                
+                
+                
+                if (lireCouleurDuJeton(l,c) == UnJoueur.Couleur ){
+                
+                    nbJetonAligne ++;
+                    
+                    if (nbJetonAligne == 4)
+                        return true;
+                    
+                
+                }
+                else if (l = ) {
+                    
+                }
+                else {
+                    nbJetonAligne = 0; 
+                }
+                  
+            }
+            
+        }
+        
+    }
     
     // Scan horizontale 
     
     // Scan diagonale droite 
     
     // Scan diagonale droite
-    
-    
+  
 } 

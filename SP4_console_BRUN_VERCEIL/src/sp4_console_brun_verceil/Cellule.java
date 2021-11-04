@@ -35,8 +35,14 @@ public class Cellule {
             return(false);
         }
     }
-}
 
 
+// lireCouleurDuJeton()
     
+    public String lireCouleurDuJeton() {
 
+        return jetonCourant.lireCouleur();
+
+    } 
+
+}
