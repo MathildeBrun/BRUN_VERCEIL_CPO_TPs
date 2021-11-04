@@ -46,9 +46,9 @@ public class Grille {
  // etreRemplie()  : on test toute les cases, si une case est vide : la grille n'est pas vide
     public boolean etreRemplie() {
  
-        for (int l = 0; l<6; l++ ) {
-            for (int c = 0; c<7; c++) {
-                if (CellulesJeu[l][c] == null) {
+        for (int li = 0; li<6; li++ ) {
+            for (int co = 0; co<7; co++) {
+                if (CellulesJeu[li][co] == null) {
                     return (false);
                 }
             }
@@ -60,9 +60,9 @@ public class Grille {
 // viderGrille : vide la grille
     public void viderGrille() {
 
-        for (int l = 0; l<6; l++ ) {
-            for (int c = 0; c<7; c++) {
-                CellulesJeu[l][c] = null;
+        for (int li = 0; li<6; li++ ) {
+            for (int co = 0; co<7; co++) {
+                CellulesJeu[li][co] = null;
 
             }
         }
@@ -77,8 +77,12 @@ public class Grille {
                     affichageConsole = "X";
                 }
                 else {
-                    if (CellulesJeu[i][j].Jeton.Couleur=="Rouge"){
-                        
+                    String CouleurDuJeton = lireCouleurDuJeton(i,j);
+                    if(CouleurDuJeton=="Rouge"){
+                        affichageConsole="Rouge";
+                    }
+                    else {
+                        affichageConsole="Jaune";
                     }
                 }
                 System.out.print(affichageConsole +"  ");
@@ -92,9 +96,9 @@ public class Grille {
     
 // celluleOccupee : test si la cellule est occupé
     
-    public boolean celluleOccupee(int l, int c) {
+    public boolean celluleOccupee(int li, int co) {
         
-        if (CellulesJeu[l][c] == null){
+        if (CellulesJeu[li][co] == null){
             return true;
         }
         else {
@@ -104,8 +108,8 @@ public class Grille {
     
 // lireCouleurDuJeton
     
-    public String lireCouleurDuJeton(int l, int c) {
-        return CellulesJeu[l][c].lireCouleurDuJeton();
+    public String lireCouleurDuJeton(int li, int co) {
+        return CellulesJeu[li][co].lireCouleurDuJeton();
     }
     
 // etreGagnantePourJoueur(Joueur)
@@ -117,12 +121,12 @@ public class Grille {
         
         int nbJetonAligne = 0;
         
-        for (int l = 0; l<6; l++ ) {
-            for (int c = 0; c<7; c++) {
+        for (int li = 0; li<6; li++ ) {
+            for (int co = 0; co<7; co++) {
                 
                 
                 
-                if (lireCouleurDuJeton(l,c) == UnJoueur.Couleur ){
+                if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur ){
                 
                     nbJetonAligne ++;
                     
