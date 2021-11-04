@@ -29,14 +29,14 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton nouveauJetonColonne, int nouvelleColonne) {
         
         // Vérification que la colonne est pleine (on regarde la ligne la plus haute)
-        if (CellulesJeu[0][nouvelleColonne] != null) {   
+        if (colonneRemplie(uneNouvelleColonne) == true) {   
             return (false);
         }
         // Test de chaque cellule de la collonne tant qu'on en trouve pas une vide
         else {
-            int i = 5;
+            int i = 0;
             while (CellulesJeu[i][nouvelleColonne] != null) {
-                i--;         
+                i++;         
             }
         // On affecte le nouveaux jetons à la Cellule
             return (CellulesJeu[i][nouvelleColonne].affecterJeton(nouveauJetonColonne));
@@ -153,6 +153,10 @@ public class Grille {
     // Scan diagonale droite 
     
     // Scan diagonale droite
-    
+    public boolean colonneRemplie(int uneColonne) {
+        if (CellulesJeu[5][uneColonne] != null) {   
+            return (true);
+        }
+    }
     
 }
