@@ -25,8 +25,8 @@ public class SP4_console_BRUN_VERCEIL {
         System.out.println("Bien, merci à vous et bienvenue parmi nous "+nomJ1);
         System.out.println("A présent, veuillez entrer le nom du deuxième joueur :");
         String nomJ2 = sc.next();
-        System.out.println("Bien, merci à vous et bienvenue parmi nous "+nomJ2);
-        System.out.println("Bonne chance "+nomJ1+" et "+nomJ2+"\nQue le meilleur gagne !");
+        System.out.println("Parfait, heureux de vous rencontrer "+nomJ2);
+        System.out.println("Le jeu va pouvoir commencer !\nBonne chance "+nomJ1+" et "+nomJ2+"\nQue le meilleur gagne !");
         
         // Création des 2 joueurs
         Joueur joueur1 = new Joueur(nomJ1);
