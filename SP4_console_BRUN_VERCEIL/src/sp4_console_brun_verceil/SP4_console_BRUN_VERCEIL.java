@@ -18,6 +18,7 @@ public class SP4_console_BRUN_VERCEIL {
      */
     public static void main(String[] args) {
         
+        // Interface Utilisateur
         System.out.println("Bien le bonjour joueurs !\nVeuillez entrer le nom du premier joueur :");
         Scanner sc = new Scanner(System.in); 
         String nomJ1 = sc.next();
@@ -26,5 +27,20 @@ public class SP4_console_BRUN_VERCEIL {
         String nomJ2 = sc.next();
         System.out.println("Bien, merci à vous et bienvenue parmi nous "+nomJ2);
         System.out.println("Bonne chance "+nomJ1+" et "+nomJ2+"\nQue le meilleur gagne !");
+        
+        // Création des 2 joueurs
+        Joueur joueur1 = new Joueur(nomJ1);
+        Joueur joueur2 = new Joueur(nomJ2);
+        
+        // Création de la partie
+        Partie nouvellePartie = new Partie(joueur1,joueur2);
+        
+        // Attribution des couleurs aux joueurs
+        nouvellePartie.attribuerCouleursAuxJoueurs();
+        
+        // Initialisation de la partie
+        nouvellePartie.initialiserPartie();
+        
+        // Lancement de la partie
     }
 }
