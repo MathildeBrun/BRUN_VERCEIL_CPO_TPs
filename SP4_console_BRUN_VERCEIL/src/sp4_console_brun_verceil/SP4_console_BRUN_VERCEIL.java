@@ -24,12 +24,30 @@ public class SP4_console_BRUN_VERCEIL {
         Grille grilleTest = new Grille();
         Joueur JoueurTest = new Joueur("J1");
         
-        for (int i = 0; i<6; i++) {
+        
+        
+        for (int i = 0; i<3; i++) {
             
-            grilleTest.ajouterJetonDansColonne(ListeJeton[i],0);
+            if (grilleTest.ajouterJetonDansColonne(ListeJeton[i],1) == true) {
+                
+                System.out.println("La collone se rempli " + i+1 + " jeton dedans");
+               
+            }
+            else {
+                System.out.println("La collone est pleine");
+            }
+                
             
         }
         
+        if (grilleTest.ajouterJetonDansColonne(ListeJeton[4],1) == true) {
+                
+                System.out.println("un jeton à été ajouté");
+   
+        }
+        else {
+                System.out.println("La collone est déja pleine");
+        }
         
         
         

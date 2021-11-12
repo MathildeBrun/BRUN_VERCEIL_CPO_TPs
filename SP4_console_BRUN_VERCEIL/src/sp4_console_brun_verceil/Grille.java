@@ -14,7 +14,7 @@ public class Grille {
     
     Cellule [][] CellulesJeu;
 
-    
+   
     
     // Methodes \\
     
@@ -162,7 +162,7 @@ public class Grille {
     
 // colonneRemplie
     public boolean colonneRemplie(int uneColonne) {
-        if (CellulesJeu[5][uneColonne] != null) {   
+        if (CellulesJeu[5][uneColonne].jetonCourant != null) {   
             return true;
             
         }
