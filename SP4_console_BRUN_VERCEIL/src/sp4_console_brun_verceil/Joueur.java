@@ -15,6 +15,7 @@ public class Joueur {
     String Couleur;
     Jeton [] ListeJetons = new Jeton[21];
     int nombreJetonsRestants = 0;
+    int nombreDesintegrateursPossession=0;
 
     // Création du contructeur
     public Joueur(String unNom) {
@@ -35,5 +36,20 @@ public class Joueur {
             nombreJetonsRestants++;
             return(true);
         }
+    }
+    
+    public void obtenirDesintegrateur(){
+        nombreDesintegrateursPossession++;
+    }
+    
+    public boolean utiliserDesintegrateur(){
+        if(nombreDesintegrateursPossession>0){
+            nombreDesintegrateursPossession--;
+            return(true);
+        }
+        else{
+            return(false);
+        }
+        
     }
 }
