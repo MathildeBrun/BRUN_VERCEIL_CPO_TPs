@@ -12,15 +12,23 @@ package sp4_console_brun_verceil;
 // définition de la class Grille
 public class Grille {
     
-    Cellule [][] CellulesJeu = new Cellule [6][7];
+    Cellule [][] CellulesJeu;
 
     
     
     // Methodes \\
     
  // Constructeur "Grille"
-    public Grille(Cellule [][] uneCellulesJeu) {
-        CellulesJeu = uneCellulesJeu;
+    public Grille() {
+        CellulesJeu = new Cellule [6][7];
+        for (int li = 0; li<6; li++ ) {
+            for (int co = 0; co<7; co++) {
+                
+                CellulesJeu[li][co] = new Cellule();
+                
+            }
+        }
+        
     }
 
     
@@ -66,7 +74,7 @@ public class Grille {
             }
         }
     }
-
+    
 // affiche GrilleSurConsole
     public void GrilleSurConsole() {
         String affichageConsole="";
@@ -78,13 +86,13 @@ public class Grille {
                 else {
                     String CouleurDuJeton = lireCouleurDuJeton(i,j);
                     if(CouleurDuJeton=="Rouge"){
-                        affichageConsole="Rouge";
+                        System.out.print("\u001B[31m"+affichageConsole);
                     }
                     else {
-                        affichageConsole="Jaune";
+                        System.out.print("\u001B[33m"+affichageConsole);
                     }
                 }
-                System.out.print(affichageConsole +"  ");
+                System.out.print("  ");
             }
             System.out.println("");
         }
@@ -161,3 +169,5 @@ public class Grille {
         return false; 
     }
 }
+
+

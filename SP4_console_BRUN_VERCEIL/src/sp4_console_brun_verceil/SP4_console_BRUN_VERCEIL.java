@@ -17,7 +17,27 @@ public class SP4_console_BRUN_VERCEIL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    
         
+        Jeton [] ListeJeton = new Jeton[42];   
+        Cellule CelluleTest = new Cellule();      
+        Grille grilleTest = new Grille();
+        Joueur JoueurTest = new Joueur("J1");
+        
+        for (int i = 0; i<6; i++) {
+            
+            grilleTest.ajouterJetonDansColonne(ListeJeton[i],0);
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+    /**    
         // Interface Utilisateur
         System.out.println("Bien le bonjour joueurs !\nVeuillez entrer le nom du premier joueur :");
         Scanner sc = new Scanner(System.in); 
@@ -42,5 +62,7 @@ public class SP4_console_BRUN_VERCEIL {
         nouvellePartie.initialiserPartie();
         
         // Lancement de la partie
+    */    
+        
     }
 }

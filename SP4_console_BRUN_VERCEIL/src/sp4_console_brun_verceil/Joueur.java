@@ -27,7 +27,7 @@ public class Joueur {
     }
     
     public boolean ajouterJeton(Jeton nouveauJetonJoueur){
-        if (nombreJetonsRestants > 21){
+        if (nombreJetonsRestants == 21){
             return(false);
         }
         else {
