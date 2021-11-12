@@ -168,6 +168,15 @@ public class Grille {
         }
         return false; 
     }
+    
+// PlacerTrouNoir
+    public boolean placerTrouNoir(int ligne, int colonne){
+        for(int i=0; i<5;i++){
+            if(CellulesJeu[ligne][colonne].placerTrouNoir()==false){
+                i--;
+            }
+        }
+        return(true); 
+    }
 }
-
-
+ 
