@@ -178,5 +178,10 @@ public class Grille {
         }
         return(true); 
     }
+ 
+ // Tasser Grille
+    public void tasserGrille(int colonneaTasser){
+        
+    }
 }
  
