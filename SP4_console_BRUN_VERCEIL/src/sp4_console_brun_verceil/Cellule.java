@@ -55,7 +55,6 @@ public class Cellule {
         }    
     }
     
-    
     public boolean presenceTrouNoir(){
         if(trouNoir==true){
             return(true);
@@ -64,4 +63,17 @@ public class Cellule {
             return(false);
         }
     }
+
+    public boolean activerTrouNoir(){
+        if(trouNoir==true){
+            jetonCourant=null;
+            trouNoir=false;
+            return(true);
+        }
+        else{
+            return(false);
+        }
+    }
+
+
 }
