@@ -45,4 +45,14 @@ public class Cellule {
 
     } 
 
+    
+    public boolean presenceTrouNoir(){
+        if(trouNoir==false){
+            trouNoir=true;
+            return(true); 
+        }
+        else{
+            return(false);
+        }
+    }
 }
