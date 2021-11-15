@@ -81,5 +81,12 @@ public class Cellule {
         }
         return(false);
     }
-
+    
+    public boolean recupererDesintegrateur() {
+        if (presenceDesintegrateur()==true){
+            desintegrateur=false;
+            return(true);
+        }
+        return(false);
+    }
 }
