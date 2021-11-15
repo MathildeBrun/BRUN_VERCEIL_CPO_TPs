@@ -15,13 +15,13 @@ package sp4_console_brun_verceil;
 public class Cellule {
     Jeton jetonCourant;
     boolean trouNoir;
-    boolean desintégrateur;
+    boolean desintegrateur;
     
  // Constructeur "Cellule"
     public Cellule() {
         jetonCourant = null;
         trouNoir = false;
-        desintégrateur = false;
+        desintegrateur = false;
     }
 
 // Methode affecterJeton
@@ -75,5 +75,11 @@ public class Cellule {
         }
     }
 
+    public boolean presenceDesintegrateur(){
+        if(desintegrateur==true){
+            return(true);
+        }
+        return(false);
+    }
 
 }
