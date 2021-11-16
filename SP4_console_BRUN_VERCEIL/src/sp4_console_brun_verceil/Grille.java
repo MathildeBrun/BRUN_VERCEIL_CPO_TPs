@@ -15,7 +15,7 @@ public class Grille {
     Cellule [][] CellulesJeu;
 
     
-    // Methodes \\
+    // Méthodes \\
     
  // Constructeur "Grille"
     public Grille() {
@@ -26,8 +26,7 @@ public class Grille {
                 CellulesJeu[li][co] = new Cellule();
                 
             }
-        }
-        
+        }    
     }
 
     
@@ -104,10 +103,10 @@ public class Grille {
     public boolean celluleOccupee(int li, int co) {
         
         if (CellulesJeu[li][co] == null){
-            return true;
+            return false;
         }
         else {
-            return false;
+            return true;
         }
     }
     
@@ -168,7 +167,6 @@ public class Grille {
     public boolean colonneRemplie(int uneColonne) {
         if (CellulesJeu[5][uneColonne] != null) {   
             return true;
-            
         }
         return false; 
     }
