@@ -29,10 +29,12 @@ public class SP4_console_BRUN_VERCEIL {
         // Création de la grille de jeu
         Grille grilleTest = new Grille();
 
-      
-        for (int i = 0; i<5; i++) {
+        
+        System.out.println(joueur1.ListeJetons[0].Couleur);
+/**      
+        for (int i = 0; i<8; i++) {
             
-            if (grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[i],5) == true) {
+            if (grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[i],0) == true) {
                 
                 System.out.println("La colonne se rempli " + (i+1) + " jeton dedans");
                

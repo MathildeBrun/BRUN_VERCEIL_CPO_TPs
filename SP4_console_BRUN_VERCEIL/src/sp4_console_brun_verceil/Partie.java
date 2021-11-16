@@ -38,6 +38,7 @@ public class Partie {
     }
     
     public void initialiserPartie() {
+        attribuerCouleursAuxJoueurs();
         for (int i =0; i<21; i++) {
             Jeton JetonJoueur1 = new Jeton(ListeJoueur[0].Couleur);
             ListeJoueur[0].ajouterJeton(JetonJoueur1);

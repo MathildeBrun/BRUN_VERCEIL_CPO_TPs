@@ -42,7 +42,7 @@ public class Grille {
         // Test de chaque cellule de la collonne tant qu'on en trouve pas une vide
         else {
             int i = 0;
-            while (CellulesJeu[i][nouvelleColonne] != null) {
+            while (CellulesJeu[i][nouvelleColonne] != null & i==5) {
                 i++;         
             }
         // On affecte le nouveaux jetons à la Cellule
@@ -104,7 +104,7 @@ public class Grille {
 // celluleOccupee : test si la cellule est occupé   
     public boolean celluleOccupee(int li, int co) {
         
-        if (CellulesJeu[li][co] == null){
+        if (CellulesJeu[li][co].jetonCourant != null){
             return true;
         }
         else {
@@ -162,7 +162,7 @@ public class Grille {
     
 // colonneRemplie
     public boolean colonneRemplie(int uneColonne) {
-        if (CellulesJeu[5][uneColonne].jetonCourant != null) {   
+        if (celluleOccupee(5,uneColonne) == true) {   
             return true;
             
         }
@@ -179,6 +179,7 @@ public class Grille {
         return(true); 
     }
  
+    /**
     
  // Tasser Grille
     public void tasserGrille(int colonneaTasser){
@@ -197,6 +198,6 @@ public class Grille {
         Cellule refJeton = CellulesJeu[numLigne][numColonne];
         CellulesJeu[numLigne][numColonne]=null;
         return(jeton)
-    }
+    } **/
 }
  
