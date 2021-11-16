@@ -19,28 +19,32 @@ public class SP4_console_BRUN_VERCEIL {
     public static void main(String[] args) {
     
         
-        Jeton [] ListeJeton = new Jeton[42];   
-        Cellule CelluleTest = new Cellule();      
+        // Création des 2 joueurs
+        Joueur joueur1 = new Joueur("J1");
+        Joueur joueur2 = new Joueur("J2");
+        
+        // Création de la partie
+        Partie nouvellePartie = new Partie(joueur1,joueur2);
+        
+        // Création de la grille de jeu
         Grille grilleTest = new Grille();
-        Joueur JoueurTest = new Joueur("J1");
-        
-        
-        
-        for (int i = 0; i<3; i++) {
+
+      
+        for (int i = 0; i<5; i++) {
             
-            if (grilleTest.ajouterJetonDansColonne(ListeJeton[i],1) == true) {
+            if (grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[i],5) == true) {
                 
-                System.out.println("La collone se rempli " + i+1 + " jeton dedans");
+                System.out.println("La colonne se rempli " + (i+1) + " jeton dedans");
                
             }
             else {
-                System.out.println("La collone est pleine");
+                System.out.println("La colonne est pleine");
             }
                 
-            
-        }
         
-        if (grilleTest.ajouterJetonDansColonne(ListeJeton[4],1) == true) {
+        }
+ /**    
+        if (grilleTest.ajouterJetonDansColonne(ListeJeton[7],0) == true) {
                 
                 System.out.println("un jeton à été ajouté");
    
@@ -48,8 +52,8 @@ public class SP4_console_BRUN_VERCEIL {
         else {
                 System.out.println("La collone est déja pleine");
         }
-        
-        
+
+**/        
         
         
         
