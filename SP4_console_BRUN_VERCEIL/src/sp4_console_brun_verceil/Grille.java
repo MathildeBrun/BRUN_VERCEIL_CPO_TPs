@@ -168,6 +168,35 @@ public class Grille {
         }
         return false; 
     }
+    
+// PlacerTrouNoir
+    public boolean placerTrouNoir(int ligne, int colonne){
+        for(int i=0; i<5;i++){
+            if(CellulesJeu[ligne][colonne].placerTrouNoir()==false){
+                i--;
+            }
+        }
+        return(true); 
+    }
+ 
+    
+ // Tasser Grille
+    public void tasserGrille(int colonneaTasser){
+        if (supprimerJeton(int nombre1, int nombre2)==true){
+            
+        }
+    }
+    
+    // SupprimerJeton
+    public boolean supprimerJeton(int number1, int number2){
+        
+    }
+    
+    //Recuperer Jeton
+    public boolean recupererJeton(int numLigne, int numColonne){
+        Cellule refJeton = CellulesJeu[numLigne][numColonne];
+        CellulesJeu[numLigne][numColonne]=null;
+        return(jeton)
+    }
 }
-
-
+ 

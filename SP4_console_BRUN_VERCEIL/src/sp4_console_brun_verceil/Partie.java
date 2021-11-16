@@ -47,6 +47,16 @@ public class Partie {
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
         
+        for (int compteur=0; compteur<5; compteur++){
+            Random generateurAleat = new Random();
+            int ligne = generateurAleat.nextInt(5);
+            int colonne = generateurAleat.nextInt(6);
+            boolean reponse=grilleJeu[ligne][colonne].placerTrouNoir(ligne,colonne);
+            if(reponse==false){
+                compteur--;
+            }
+            
+        }
     }
     
     public void debuterPartie() {
