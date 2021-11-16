@@ -36,6 +36,12 @@ public class Cellule {
         }
     }
 
+    
+    supprimerJeton(){
+        
+    }
+    
+    
 
 // lireCouleurDuJeton()
     
