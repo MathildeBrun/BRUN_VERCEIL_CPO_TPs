@@ -15,7 +15,6 @@ public class Grille {
     Cellule [][] CellulesJeu;
 
     
-    
     // Methodes \\
     
  // Constructeur "Grille"
@@ -121,9 +120,11 @@ public class Grille {
     public boolean etreGagnantePourJoueur(Joueur UnJoueur){     
     // Scan vertical           
         for (int li = 0; li<6; li++ ) {
-            for (int co = 0; co<4; co++) {                                   
-                if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li,co+1) == UnJoueur.Couleur & lireCouleurDuJeton(li,co+2) == UnJoueur.Couleur & lireCouleurDuJeton(li,co+3) == UnJoueur.Couleur ){             
-                    return true;
+            for (int co = 0; co<4; co++) {
+                if (CellulesJeu[li][co].jetonCourant != null && CellulesJeu[li][co+1].jetonCourant != null && CellulesJeu[li][co+2].jetonCourant != null && CellulesJeu[li][co+3].jetonCourant != null){
+                    if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li,co+1) == UnJoueur.Couleur & lireCouleurDuJeton(li,co+2) == UnJoueur.Couleur & lireCouleurDuJeton(li,co+3) == UnJoueur.Couleur ){             
+                        return true;
+                    }                    
                 }                
             }          
         }
@@ -131,19 +132,21 @@ public class Grille {
     // Scan horizontal
         for (int li = 0; li<3; li++ ) {
             for (int co = 0; co<6; co++) {
-                                    
-                if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+1,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+2,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+3,co) == UnJoueur.Couleur ){                
-                    return true;
-                }                  
-            }            
+                if(CellulesJeu[li][co].jetonCourant != null && CellulesJeu[li+1][co].jetonCourant != null && CellulesJeu[li+2][co].jetonCourant != null && CellulesJeu[li+3][co].jetonCourant != null){                    
+                    if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+1,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+2,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+3,co) == UnJoueur.Couleur ){                
+                        return true;
+                    }
+                }
+            }       
         }
     
     // Scan diagonale montante
         for (int li = 0; li<3; li++ ) {
             for (int co = 0; co<4; co++) {
-                                    
-                if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+1,co+1) == UnJoueur.Couleur & lireCouleurDuJeton(li+2,co+2) == UnJoueur.Couleur & lireCouleurDuJeton(li+3,co+3) == UnJoueur.Couleur ){                
-                    return true;
+                if(CellulesJeu[li][co].jetonCourant != null && CellulesJeu[li+1][co+1].jetonCourant != null && CellulesJeu[li+2][co+2].jetonCourant != null && CellulesJeu[li+3][co+3].jetonCourant != null){              
+                    if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li+1,co+1) == UnJoueur.Couleur & lireCouleurDuJeton(li+2,co+2) == UnJoueur.Couleur & lireCouleurDuJeton(li+3,co+3) == UnJoueur.Couleur ){                
+                        return true;
+                    }
                 }    
             }            
         }
@@ -151,9 +154,10 @@ public class Grille {
     // Scan diagonale descendante
         for (int li = 3; li<6; li++ ) {
                 for (int co = 0; co<4; co++) {
-
-                    if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li-1,co+1) == UnJoueur.Couleur & lireCouleurDuJeton(li-2,co+2) == UnJoueur.Couleur & lireCouleurDuJeton(li-3,co+3) == UnJoueur.Couleur ){
-                        return true;
+                    if(CellulesJeu[li][co].jetonCourant != null && CellulesJeu[li-1][co+1].jetonCourant != null && CellulesJeu[li-2][co+2].jetonCourant != null && CellulesJeu[li-3][co+3].jetonCourant != null) {
+                        if (lireCouleurDuJeton(li,co) == UnJoueur.Couleur & lireCouleurDuJeton(li-1,co+1) == UnJoueur.Couleur & lireCouleurDuJeton(li-2,co+2) == UnJoueur.Couleur & lireCouleurDuJeton(li-3,co+3) == UnJoueur.Couleur ){
+                            return true;
+                        }
                     }
                 }
             } 
@@ -182,7 +186,7 @@ public class Grille {
     
  // Tasser Grille
     public void tasserGrille(int colonneaTasser){
-        if (supprimerJeton(int nombre1, int nombre2)==true){
+        if (supprimerJeton()==true{
             
         }
     }
@@ -196,7 +200,7 @@ public class Grille {
     public boolean recupererJeton(int numLigne, int numColonne){
         Cellule refJeton = CellulesJeu[numLigne][numColonne];
         CellulesJeu[numLigne][numColonne]=null;
-        return(jeton)
+        return(jeton);
     }
 }
  
