@@ -25,26 +25,24 @@ public class SP4_console_BRUN_VERCEIL {
         
         // Création de la partie
         Partie nouvellePartie = new Partie(joueur1,joueur2);
+        nouvellePartie.initialiserPartie();
+        
         
         // Création de la grille de jeu
         Grille grilleTest = new Grille();
 
         
         System.out.println(joueur1.ListeJetons[0].Couleur);
-/**      
-        for (int i = 0; i<8; i++) {
-            
-            if (grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[i],0) == true) {
-                
-                System.out.println("La colonne se rempli " + (i+1) + " jeton dedans");
-               
-            }
-            else {
-                System.out.println("La colonne est pleine");
-            }
-                
+
+        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[0],0);
+        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[1],0);
+        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[2],1);
+        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[3],0);
         
-        }
+    System.out.println("\n" + grilleTest.etreRemplie());
+    
+    grilleTest.GrilleSurConsole();
+    
  /**    
         if (grilleTest.ajouterJetonDansColonne(ListeJeton[7],0) == true) {
                 
