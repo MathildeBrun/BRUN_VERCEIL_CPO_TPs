@@ -48,8 +48,7 @@ public class Partie {
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
         
-    /**    
-        for (int compteur=0; compteur<5; compteur++){
+        /*for (int compteur=0; compteur<5; compteur++){
             Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
@@ -59,8 +58,7 @@ public class Partie {
             }
             
         }
-    **/
-    
+        */
     }
     
     

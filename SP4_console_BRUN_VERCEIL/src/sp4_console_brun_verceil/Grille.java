@@ -15,8 +15,7 @@ public class Grille {
     Cellule [][] CellulesJeu;
 
    
-    
-    // Methodes \\
+    // Méthodes \\
     
  // Constructeur "Grille"
     public Grille() {
@@ -27,8 +26,7 @@ public class Grille {
                 CellulesJeu[li][co] = new Cellule();
                 
             }
-        }
-        
+        }    
     }
 
     
@@ -75,7 +73,7 @@ public class Grille {
         }
     }
     
-// affiche GrilleSurConsole
+// affiche GrilleSurConsole A CORRIGER CHEZ THEO
     public void GrilleSurConsole() {
         for (int li = 5; li>=0; li-- ) {
             for (int co = 0; co<7; co++) {
@@ -102,12 +100,11 @@ public class Grille {
     
 // celluleOccupee : test si la cellule est occupé   
     public boolean celluleOccupee(int li, int co) {
-        
         if (CellulesJeu[li][co].jetonCourant != null){
             return true;
         }
         else {
-            return false;
+            return true;
         }
     }
     
@@ -167,12 +164,10 @@ public class Grille {
     public boolean colonneRemplie(int uneColonne) {
         if (celluleOccupee(5,uneColonne) == true) {   
             return true;
-            
         }
         return false; 
     }
-    
-    /**
+/*
 // PlacerTrouNoir
     public boolean placerTrouNoir(int ligne, int colonne){
         for(int i=0; i<5;i++){
@@ -182,12 +177,11 @@ public class Grille {
         }
         return(true); 
     }
- 
-    /**
-    
+}
+
  // Tasser Grille
     public void tasserGrille(int colonneaTasser){
-        if (supprimerJeton(int nombre1, int nombre2)==true){
+        if (supprimerJeton()==true{
             
         }
     }
@@ -201,7 +195,7 @@ public class Grille {
     public boolean recupererJeton(int numLigne, int numColonne){
         Cellule refJeton = CellulesJeu[numLigne][numColonne];
         CellulesJeu[numLigne][numColonne]=null;
-        return(jeton)
-    } **/
+        return(jeton);
+    }
+*/
 }
- 
