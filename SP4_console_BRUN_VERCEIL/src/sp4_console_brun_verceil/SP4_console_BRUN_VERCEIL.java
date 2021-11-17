@@ -38,18 +38,14 @@ public class SP4_console_BRUN_VERCEIL {
         // Création de la grille de jeu
         Grille grilleTest = new Grille();
 
+        // Vérification d'initialisation
+        System.out.println(joueur2.ListeJetons[1].Couleur);
         
-        System.out.println(joueur1.ListeJetons[0].Couleur);
-       
-        
-        
+        // ajout des jetons
         grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[0],0);
-        grilleTest.ajouterJetonDansColonne(joueur2.ListeJetons[1],0);
+        grilleTest.ajouterJetonDansColonne(joueur2.ListeJetons[0],0);
         
-        
-        
-        System.out.println("\n" + grilleTest.etreGagnantePourJoueur(joueur1));
-    
+        // affichage
         grilleTest.GrilleSurConsole();
     
  
