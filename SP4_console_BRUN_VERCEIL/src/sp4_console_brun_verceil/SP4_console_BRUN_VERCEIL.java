@@ -22,7 +22,6 @@ public class SP4_console_BRUN_VERCEIL {
         Partie nouvellePartie = new Partie(joueur1,joueur2);
         nouvellePartie.initialiserPartie();
         Grille grilleTest = new Grille();
-        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[0],0);
         grilleTest.GrilleSurConsole();
 
     
