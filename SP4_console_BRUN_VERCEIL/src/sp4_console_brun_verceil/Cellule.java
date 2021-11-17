@@ -40,9 +40,10 @@ public class Cellule {
 // lireCouleurDuJeton()
     
     public String lireCouleurDuJeton() {
-
-        return jetonCourant.lireCouleur();
-
+        if (jetonCourant != null ) {
+            return jetonCourant.lireCouleur();
+        }
+        return("none");
     } 
 
     public boolean placerTrouNoir(){
