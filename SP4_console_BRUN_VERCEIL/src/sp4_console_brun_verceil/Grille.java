@@ -15,8 +15,7 @@ public class Grille {
     Cellule [][] CellulesJeu;
 
    
-    
-    // Methodes \\
+    // Méthodes \\
     
  // Constructeur "Grille"
     public Grille() {
@@ -76,10 +75,10 @@ public class Grille {
     
 // affiche GrilleSurConsole A CORRIGER CHEZ THEO
     public void GrilleSurConsole() {
-        for (int i=0; i<6; i++) {
-            for (int j=0; j<7; j++){
+        for (int j=6; j>0; j--) {
+            for (int i=5; i>0; i--){
                 if (CellulesJeu[i][j].jetonCourant==null){
-                    System.out.print("X");
+                    System.out.print("\u001B[0m X");
                 }
                 else {
                     String CouleurDuJeton = lireCouleurDuJeton(i,j);
@@ -169,8 +168,7 @@ public class Grille {
         }
         return false; 
     }
-}
-/*   
+/*
 // PlacerTrouNoir
     public boolean placerTrouNoir(int ligne, int colonne){
         for(int i=0; i<5;i++){
@@ -181,10 +179,7 @@ public class Grille {
         return(true); 
     }
 }
-*/
-    
-  /*
-    
+
  // Tasser Grille
     public void tasserGrille(int colonneaTasser){
         if (supprimerJeton()==true{
@@ -201,7 +196,7 @@ public class Grille {
     public boolean recupererJeton(int numLigne, int numColonne){
         Cellule refJeton = CellulesJeu[numLigne][numColonne];
         CellulesJeu[numLigne][numColonne]=null;
-    }
         return(jeton);
     }
 */
+}
