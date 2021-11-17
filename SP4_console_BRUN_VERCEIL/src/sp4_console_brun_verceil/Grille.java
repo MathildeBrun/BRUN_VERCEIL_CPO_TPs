@@ -75,13 +75,13 @@ public class Grille {
     
 // affiche GrilleSurConsole A CORRIGER CHEZ THEO
     public void GrilleSurConsole() {
-        for (int j=6; j>0; j--) {
-            for (int i=5; i>0; i--){
-                if (CellulesJeu[i][j].jetonCourant==null){
+        for (int li = 5; li>=0; li-- ) {
+            for (int co = 0; co<7; co++) {
+                if (CellulesJeu[li][co].jetonCourant==null){
                     System.out.print("\u001B[0m X");
                 }
                 else {
-                    String CouleurDuJeton = lireCouleurDuJeton(i,j);
+                    String CouleurDuJeton = lireCouleurDuJeton(li,co);
                     if(CouleurDuJeton=="Rouge"){
                         System.out.print("\u001B[31m J");
                     }
