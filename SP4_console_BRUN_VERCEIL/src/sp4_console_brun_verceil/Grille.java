@@ -36,13 +36,13 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton nouveauJetonColonne, int nouvelleColonne) {
         
         // Vérification que la colonne est pleine (on regarde la ligne la plus haute)
-        if (colonneRemplie(nouvelleColonne) == true) {   
+        if (colonneRemplie(nouvelleColonne) == true) {
             return (false);
         }
         // Test de chaque cellule de la collonne tant qu'on en trouve pas une vide
         else {
             int i = 0;
-            while (CellulesJeu[i][nouvelleColonne] != null & i==5) {
+            while (CellulesJeu[i][nouvelleColonne].jetonCourant != null & i !=5 ) {
                 i++;         
             }
         // On affecte le nouveaux jetons à la Cellule
@@ -55,7 +55,7 @@ public class Grille {
  
         for (int li = 0; li<6; li++ ) {
             for (int co = 0; co<7; co++) {
-                if (CellulesJeu[li][co] == null) {
+                if (CellulesJeu[li][co].jetonCourant == null) {
                     return (false);
                 }
             }
@@ -69,7 +69,7 @@ public class Grille {
 
         for (int li = 0; li<6; li++ ) {
             for (int co = 0; co<7; co++) {
-                CellulesJeu[li][co] = null;
+                CellulesJeu[li][co].jetonCourant = null;
 
             }
         }
@@ -77,19 +77,18 @@ public class Grille {
     
 // affiche GrilleSurConsole
     public void GrilleSurConsole() {
-        String affichageConsole="";
-        for (int i=0; i<7; i++) {
-            for (int j=0; i<6; j++){
-                if (CellulesJeu[i][j]==null){
-                    affichageConsole = "X";
+        for (int li = 5; li>=0; li-- ) {
+            for (int co = 0; co<7; co++) {
+                if (CellulesJeu[li][co].jetonCourant==null){
+                    System.out.print("\u001B[0m X");
                 }
                 else {
-                    String CouleurDuJeton = lireCouleurDuJeton(i,j);
+                    String CouleurDuJeton = lireCouleurDuJeton(li,co);
                     if(CouleurDuJeton=="Rouge"){
-                        System.out.print("\u001B[31m"+affichageConsole);
+                        System.out.print("\u001B[31m J");
                     }
                     else {
-                        System.out.print("\u001B[33m"+affichageConsole);
+                        System.out.print("\u001B[33m J");
                     }
                 }
                 System.out.print("  ");
