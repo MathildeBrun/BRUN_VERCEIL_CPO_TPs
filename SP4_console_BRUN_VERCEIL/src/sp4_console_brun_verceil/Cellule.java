@@ -49,7 +49,7 @@ public class Cellule {
         if (jetonCourant!=null){
             return jetonCourant.lireCouleur();
         }
-        return ("none");
+        return("none");
     } 
 
     public boolean placerTrouNoir(){
