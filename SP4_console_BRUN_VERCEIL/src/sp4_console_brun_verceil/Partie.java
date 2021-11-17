@@ -15,7 +15,7 @@ public class Partie {
     // Création des attributs
     Joueur ListeJoueur [] = new Joueur [2];
     Joueur joueurCourant;
-    Grille grilleJeu[][] = new Grille[6][7] ;
+    Grille grilleJeu;
     
     // Création du constructeur
     public Partie (Joueur joueur1, Joueur joueur2) {
@@ -63,7 +63,15 @@ public class Partie {
     
     
     public void debuterPartie() {
-        
+        joueurCourant=ListeJoueur[0];
+        do{
+            grilleJeu.GrilleSurConsole();
+            System.out.println("A vous de jouer " + joueurCourant);
+            System.out.println("Dans quelle colonne voulez-vous mettre un jeton ?");
+            // Scanner
+            
+            
+        } while(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true || grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true || grilleJeu.etreRemplie()==true);
     }
  
 }
