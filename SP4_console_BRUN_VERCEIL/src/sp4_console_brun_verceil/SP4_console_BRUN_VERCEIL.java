@@ -33,15 +33,13 @@ public class SP4_console_BRUN_VERCEIL {
 
         
         System.out.println(joueur1.ListeJetons[0].Couleur);
-
-        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[0],0);
-        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[1],0);
-        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[2],1);
-        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[3],0);
         
-    System.out.println("\n" + grilleTest.etreRemplie());
+        
+    System.out.println("\n" + grilleTest.etreGagnantePourJoueur(joueur1));
     
     grilleTest.GrilleSurConsole();
+    
+    
     
  /**    
         if (grilleTest.ajouterJetonDansColonne(ListeJeton[7],0) == true) {
