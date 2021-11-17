@@ -17,6 +17,7 @@ public class SP4_console_BRUN_VERCEIL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    /*
         Joueur joueur1 = new Joueur("patate");
         Joueur joueur2 = new Joueur("boulet");
         Partie nouvellePartie = new Partie(joueur1,joueur2);
@@ -24,9 +25,36 @@ public class SP4_console_BRUN_VERCEIL {
         Grille grilleTest = new Grille();
         grilleTest.GrilleSurConsole();
 
-    
+    */
         
-    /*
+        // Création des 2 joueurs
+        Joueur joueur1 = new Joueur("J1");
+        Joueur joueur2 = new Joueur("J2");
+        
+        // Création de la partie
+        Partie nouvellePartie = new Partie(joueur1,joueur2);
+        nouvellePartie.initialiserPartie();
+        
+        // Création de la grille de jeu
+        Grille grilleTest = new Grille();
+
+        // Vérification d'initialisation
+        System.out.println(joueur2.ListeJetons[1].Couleur);
+        
+        // ajout des jetons
+        grilleTest.ajouterJetonDansColonne(joueur1.ListeJetons[0],0);
+        grilleTest.ajouterJetonDansColonne(joueur2.ListeJetons[0],0);
+        
+        // affichage
+        grilleTest.GrilleSurConsole();
+    
+ 
+        
+        
+        
+        
+        
+    /**    
         // Interface Utilisateur
         System.out.println("Bien le bonjour joueurs !\nVeuillez entrer le nom du premier joueur :");
         Scanner sc = new Scanner(System.in); 
