@@ -36,7 +36,7 @@ public class SP4_console_BRUN_VERCEIL {
         
         // Attribution des couleurs aux joueurs
         nouvellePartie.attribuerCouleursAuxJoueurs();
-        
+
         // Initialisation de la partie
         nouvellePartie.initialiserPartie();
         

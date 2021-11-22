@@ -72,7 +72,7 @@ public class Partie {
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
             if(grilleJeu.placerDesintegrateur(ligne,colonne)==true){
-                desintegrateurTNPlaces++;
+                desintegrateurPlaces++;
             }
         }
         
@@ -99,12 +99,11 @@ public class Partie {
             
             // Demande action joueur
             System.out.println("A vous de jouer " + joueurCourant.Nom);
-            System.out.println("Souhaitez-vous :\n1) Récuperer un jeton\n2) Placer un jeton");
+            System.out.println("Souhaitez-vous :\n1) Récuperer un jeton \n2) Placer un jeton \n3) Utiliser un désintégrateur");
             Scanner sc = new Scanner(System.in); 
             int choix = sc.nextInt();
             
-            if (choix==1){
-                
+            if (choix==1){                
                 do{
                     do {
                         System.out.println("Quel jeton souhaitez-vous récuperer ?");
@@ -157,6 +156,27 @@ public class Partie {
                 // le joueur à un jeton en moins
                 joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
                 joueurCourant.nombreJetonsRestants --;
+            }
+            
+            if (choix==3){
+                if(joueurCourant.nombreDesintegrateursPossession==0){
+                    System.out.println("Vous n'avez pas de désintégrateur, vous ne pouvez pas jouer.");
+                }
+                else{
+                    int ligneJoueur;
+                    System.out.println("Dans quelle case souhaitez-vous utiliser le désintégrateur ?");
+                    System.out.println("Entrez la ligne :");
+                    ligneJoueur = sc.nextInt() - 1;
+                    System.out.println("Entrez la colonne :");
+                    colonneJoueur = sc.nextInt() - 1;
+                    while(grilleJeu.supprimerJeton(ligneJoueur, colonneJoueur) == false || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur]==null){
+                        System.out.println("Vous ne pouvez pas utiliser de désintégrateur ici, veuillez réessayer à un autre endroit.");
+                        System.out.println("Entrez la ligne :");
+                        ligneJoueur = sc.nextInt() - 1;
+                        System.out.println("Entrez la colonne :");
+                        colonneJoueur = sc.nextInt() - 1;
+                    }
+                }
             }
             
             
