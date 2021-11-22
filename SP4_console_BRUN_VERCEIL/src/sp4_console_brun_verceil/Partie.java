@@ -48,9 +48,19 @@ public class Partie {
             Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
-        
-        /*for (int compteur=0; compteur<5; compteur++){
+        int trouNoirPlaces = 0;
+        while(trouNoirPlaces<3){
             Random generateurAleat = new Random();
+            int ligne = generateurAleat.nextInt(5);
+            int colonne = generateurAleat.nextInt(6);
+            if(grilleJeu.placerTrouNoir(ligne,colonne)==true){
+                trouNoirPlaces++;
+            }
+        }
+        
+    }
+    
+        /*  Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
             boolean reponse=grilleJeu[ligne][colonne].placerTrouNoir(ligne,colonne);
@@ -60,8 +70,6 @@ public class Partie {
             
         }
         */
-    }
-    
     
     public void debuterPartie() {
         
@@ -98,6 +106,10 @@ public class Partie {
             
             // Ajout du jeton
             grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
+            
+            if (grilleJeu.celluleCourante.activerTrouNoir()==true){
+                
+            }
             
             // le joueur à un jeton en moins
             joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;

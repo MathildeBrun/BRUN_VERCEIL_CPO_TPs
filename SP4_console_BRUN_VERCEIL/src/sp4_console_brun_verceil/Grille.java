@@ -77,9 +77,18 @@ public class Grille {
     public void GrilleSurConsole() {
         for (int li = 5; li>=0; li-- ) {
             for (int co = 0; co<7; co++) {
-                if (CellulesJeu[li][co].jetonCourant==null){
+                if(CellulesJeu[li][co].presenceTrouNoir()==true){
+                    System.out.print("\u001B[34m O");
+                }    
+                
+                else if (CellulesJeu[li][co].presenceDesintegrateur()==true){
+                    System.out.print("\u001B[32m D");
+                }
+                    
+                else if (CellulesJeu[li][co].jetonCourant==null){
                     System.out.print("\u001B[0m X");
                 }
+                
                 else {
                     String CouleurDuJeton = lireCouleurDuJeton(li,co);
                     if(CouleurDuJeton=="Rouge"){
@@ -89,6 +98,8 @@ public class Grille {
                         System.out.print("\u001B[33m J");
                     }
                 }
+                
+                    
                 System.out.print("  ");
             }
             System.out.println("");
@@ -167,18 +178,22 @@ public class Grille {
         }
         return false; 
     }
-/*
+
 // PlacerTrouNoir
     public boolean placerTrouNoir(int ligne, int colonne){
-        for(int i=0; i<5;i++){
-            if(CellulesJeu[ligne][colonne].placerTrouNoir()==false){
-                i--;
-            }
+        
+        if(CellulesJeu[ligne][colonne].placerTrouNoir()==false){
+            return false;
         }
         return(true); 
+        
     }
-}
 
+    
+    
+
+    
+/*
  // Tasser Grille
     public void tasserGrille(int colonneaTasser){
         if (supprimerJeton()==true{
@@ -198,4 +213,5 @@ public class Grille {
         return(jeton);
     }
 */
+
 }
