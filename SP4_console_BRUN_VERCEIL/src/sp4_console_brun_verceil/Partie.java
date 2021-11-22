@@ -57,20 +57,27 @@ public class Partie {
                 trouNoirPlaces++;
             }
         }
-        
-    }
-    
-        /*  Random generateurAleat = new Random();
+        int desintegrateurTNPlaces=0;
+        while(desintegrateurTNPlaces<2){
+            Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
-            boolean reponse=grilleJeu[ligne][colonne].placerTrouNoir(ligne,colonne);
-            if(reponse==false){
-                compteur--;
+            if(grilleJeu.placerTrouNoir(ligne,colonne)==true && grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+                desintegrateurTNPlaces++;
             }
-            
         }
-        */
-    
+        int desintegrateurPlaces=0;        
+        while(desintegrateurPlaces<3){
+            Random generateurAleat = new Random();
+            int ligne = generateurAleat.nextInt(5);
+            int colonne = generateurAleat.nextInt(6);
+            if(grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+                desintegrateurTNPlaces++;
+            }
+        }
+        
+    }
+        
     public void debuterPartie() {
         
         do{
