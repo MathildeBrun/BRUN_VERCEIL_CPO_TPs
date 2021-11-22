@@ -75,7 +75,9 @@ public class Partie {
         
         do{
             int colonneJoueur;
-            
+            int ligneRecupJeton;
+            int colonneRecupJeton;
+                    
             // Affectation joueur
             if (joueurCourant==ListeJoueur[0]) {
                 joueurCourant=ListeJoueur[1];
@@ -90,18 +92,38 @@ public class Partie {
             
             // Demande action joueur
             System.out.println("A vous de jouer " + joueurCourant.Nom);
-            System.out.println("Souhaitez-vous :\n1) Récuperer un jeton\2) Placer un jeton");
+            System.out.println("Souhaitez-vous :\n1) Récuperer un jeton\n2) Placer un jeton");
             Scanner sc = new Scanner(System.in); 
-            String choix = sc.next();
+            int choix = sc.nextInt();
             
-            If (choix=="1"){
+            if (choix==1){
+                
+                do{
+                    do {
+                        System.out.println("Quel jeton souhaitez-vous récuperer ?");
+                        System.out.println("Entrer la ligne :");
+                        ligneRecupJeton = sc.nextInt() -1;
+
+                        System.out.println("Entrer la colonne :");
+                        colonneRecupJeton = sc.nextInt() -1;    
+
+
+                        } while (colonneRecupJeton < 0 || colonneRecupJeton > 6 || ligneRecupJeton < 0 || ligneRecupJeton > 5);
+        
+                } while (grilleJeu.lireCouleurDuJeton(choix, choix))
+                    
+                grilleJeu.recupererJeton(ligneRecupJeton, colonneRecupJeton);
+                grilleJeu.tasserGrille(colonneRecupJeton);
+                if(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true){
+                    System.out.println("Vous avez provoqué une faute de jeu, Vous avez perdu !");
+                    break;
+                }
+            }
             
-        }
             
             
             
-            
-            if (choix=="2"){
+            if (choix==2){
                 System.out.println("Dans quelle colonne voulez-vous mettre un jeton ?");
                 do {
                     // récup coup
