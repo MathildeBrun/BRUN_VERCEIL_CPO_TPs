@@ -6,6 +6,7 @@
 package sp4_console_brun_verceil;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -15,7 +16,7 @@ public class Partie {
     // Création des attributs
     Joueur ListeJoueur [] = new Joueur [2];
     Joueur joueurCourant;
-    Grille grilleJeu;
+    Grille grilleJeu = new Grille();
     
     // Création du constructeur
     public Partie (Joueur joueur1, Joueur joueur2) {
@@ -63,15 +64,51 @@ public class Partie {
     
     
     public void debuterPartie() {
-        joueurCourant=ListeJoueur[0];
+        
         do{
+            int colonneJoueur;
+            
+            // Affectation joueur
+            if (joueurCourant==ListeJoueur[0]) {
+                joueurCourant=ListeJoueur[1];
+            }
+            else {
+                joueurCourant=ListeJoueur[0]; 
+            }
+            
+            // Aficchage
             grilleJeu.GrilleSurConsole();
-            System.out.println("A vous de jouer " + joueurCourant);
+            
+            
+            // Demande action joueur
+            System.out.println("A vous de jouer " + joueurCourant.Nom);
             System.out.println("Dans quelle colonne voulez-vous mettre un jeton ?");
-            // Scanner
+            
+            do {
+                // récup coup
+                Scanner sc = new Scanner(System.in); 
+                colonneJoueur = sc.nextInt() - 1;
+   
+                // message d'erreur 
+                if (grilleJeu.colonneRemplie(colonneJoueur) == true){
+                    System.out.println("Cette colonne est déjà remplie, veuillez placer votre pion dans une autre colonne.");                    
+                }
+                
+                } while (colonneJoueur < 0 || colonneJoueur >6 || grilleJeu.colonneRemplie(colonneJoueur) == true);
+            
+            // Ajout du jeton
+            grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
+            
+            // le joueur à un jeton en moins
+            joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
+            joueurCourant.nombreJetonsRestants --;
             
             
-        } while(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true || grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true || grilleJeu.etreRemplie()==true);
+            
+        } while(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])!=true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])!=true && grilleJeu.etreRemplie()!=true);
+        
+        System.out.println("Bravo ! Vous avez gagné " + joueurCourant.Nom);
+        
     }
  
 }
