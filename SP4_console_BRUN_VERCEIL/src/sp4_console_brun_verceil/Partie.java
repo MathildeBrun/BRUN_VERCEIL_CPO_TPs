@@ -106,11 +106,7 @@ public class Partie {
             
             // Ajout du jeton
             grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
-            
-            if (grilleJeu.celluleCourante.activerTrouNoir()==true){
                 
-            }
-            
             // le joueur à un jeton en moins
             joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
             joueurCourant.nombreJetonsRestants --;

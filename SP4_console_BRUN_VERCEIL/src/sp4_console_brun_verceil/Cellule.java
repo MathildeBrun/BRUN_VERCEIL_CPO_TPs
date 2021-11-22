@@ -29,6 +29,7 @@ public class Cellule {
     public boolean affecterJeton(Jeton nouveauJetonCellule) { 
         if (jetonCourant == null) {
             jetonCourant = nouveauJetonCellule;
+            activerTrouNoir();
             return(true);
         }
         else {
