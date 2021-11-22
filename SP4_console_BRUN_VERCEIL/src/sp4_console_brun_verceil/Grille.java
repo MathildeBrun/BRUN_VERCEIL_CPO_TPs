@@ -179,6 +179,21 @@ public class Grille {
         return false; 
     }
 
+    
+// Tasser Grille
+    public void tasserGrille(int colonneaTasser){
+        
+        for(int li = 1;li < 6; li++) {
+            if (CellulesJeu[li-1][colonneaTasser].jetonCourant == null){
+                CellulesJeu[li-1][colonneaTasser].jetonCourant = CellulesJeu[li][colonneaTasser].jetonCourant;
+            }
+           
+        }
+        
+    }
+    
+    
+    
 // PlacerTrouNoir
     public boolean placerTrouNoir(int ligne, int colonne){
         
@@ -188,30 +203,21 @@ public class Grille {
         return(true); 
         
     }
-
     
     
-
     
-/*
- // Tasser Grille
-    public void tasserGrille(int colonneaTasser){
-        if (supprimerJeton()==true{
-            
-        }
-    }
-    
+   /* 
     // SupprimerJeton
     public boolean supprimerJeton(int number1, int number2){
         
     }
+    */
     
     //Recuperer Jeton
-    public boolean recupererJeton(int numLigne, int numColonne){
-        Cellule refJeton = CellulesJeu[numLigne][numColonne];
-        CellulesJeu[numLigne][numColonne]=null;
-        return(jeton);
+    public Jeton recupererJeton(int numLigne, int numColonne){
+        Jeton refJeton = CellulesJeu[numLigne][numColonne].jetonCourant;
+        CellulesJeu[numLigne][numColonne].jetonCourant = null;
+        return(refJeton);
     }
-*/
 
 }

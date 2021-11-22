@@ -38,6 +38,12 @@ public class Cellule {
     }
 
     
+// recuperer jeton
+
+    public Jeton recupererJeton() {
+        return jetonCourant;
+    }
+    
     //supprimerJeton(){
         
    // }

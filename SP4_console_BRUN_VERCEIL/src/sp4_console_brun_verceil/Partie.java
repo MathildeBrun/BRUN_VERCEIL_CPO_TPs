@@ -90,27 +90,37 @@ public class Partie {
             
             // Demande action joueur
             System.out.println("A vous de jouer " + joueurCourant.Nom);
-            System.out.println("Dans quelle colonne voulez-vous mettre un jeton ?");
+            System.out.println("Souhaitez-vous :\n1) Récuperer un jeton\2) Placer un jeton");
+            Scanner sc = new Scanner(System.in); 
+            String choix = sc.next();
             
-            do {
-                // récup coup
-                Scanner sc = new Scanner(System.in); 
-                colonneJoueur = sc.nextInt() - 1;
-   
-                // message d'erreur 
-                if (grilleJeu.colonneRemplie(colonneJoueur) == true){
-                    System.out.println("Cette colonne est déjà remplie, veuillez placer votre pion dans une autre colonne.");                    
-                }
-                
-                } while (colonneJoueur < 0 || colonneJoueur >6 || grilleJeu.colonneRemplie(colonneJoueur) == true);
+            If (choix=="1"){
             
-            // Ajout du jeton
-            grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
-                
-            // le joueur à un jeton en moins
-            joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
-            joueurCourant.nombreJetonsRestants --;
+        }
             
+            
+            
+            
+            if (choix=="2"){
+                System.out.println("Dans quelle colonne voulez-vous mettre un jeton ?");
+                do {
+                    // récup coup
+                    colonneJoueur = sc.nextInt() - 1;
+
+                    // message d'erreur 
+                    if (grilleJeu.colonneRemplie(colonneJoueur) == true){
+                        System.out.println("Cette colonne est déjà remplie, veuillez placer votre pion dans une autre colonne.");                    
+                    }
+
+                    } while (colonneJoueur < 0 || colonneJoueur >6 || grilleJeu.colonneRemplie(colonneJoueur) == true);
+
+                // Ajout du jeton
+                grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
+
+                // le joueur à un jeton en moins
+                joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
+                joueurCourant.nombreJetonsRestants --;
+            }
             
             
         } while(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])!=true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])!=true && grilleJeu.etreRemplie()!=true);
