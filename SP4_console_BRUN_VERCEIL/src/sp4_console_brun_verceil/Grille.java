@@ -192,26 +192,32 @@ public class Grille {
         
     }
     
-    
-    
 // PlacerTrouNoir
     public boolean placerTrouNoir(int ligne, int colonne){
         
         if(CellulesJeu[ligne][colonne].placerTrouNoir()==false){
             return false;
         }
-        return(true); 
-        
+        return(true);
     }
     
+    public boolean placerDesintegrateur(int ligneDesintegrateur, int colonneDesintegrateur){
+        if(CellulesJeu[ligneDesintegrateur][colonneDesintegrateur].placerDesintegrateur()==true){
+            return(true);
+        }
+        return(false);
     
+    }
     
-   /* 
     // SupprimerJeton
     public boolean supprimerJeton(int number1, int number2){
-        
+        if (CellulesJeu[number1][number2]!=null){
+            CellulesJeu[number1][number2]=null;
+            return(true);
+        }
+        return(false);
     }
-    */
+    
     
     //Recuperer Jeton
     public Jeton recupererJeton(int numLigne, int numColonne){
