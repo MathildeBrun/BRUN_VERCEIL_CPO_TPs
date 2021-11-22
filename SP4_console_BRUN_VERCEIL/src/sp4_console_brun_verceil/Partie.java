@@ -156,6 +156,8 @@ public class Partie {
         } while(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])!=true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])!=true && grilleJeu.etreRemplie()!=true);
         
         System.out.println("Bravo ! Vous avez gagné " + joueurCourant.Nom);
+        System.out.println("A bientôt pour un nouveau choc des titans...");
+        
         
     }
  
