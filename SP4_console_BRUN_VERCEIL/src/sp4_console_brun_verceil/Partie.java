@@ -110,12 +110,20 @@ public class Partie {
 
                         } while (colonneRecupJeton < 0 || colonneRecupJeton > 6 || ligneRecupJeton < 0 || ligneRecupJeton > 5);
         
-                } while (grilleJeu.lireCouleurDuJeton(choix, choix))
+                } while (grilleJeu.lireCouleurDuJeton(ligneRecupJeton, colonneRecupJeton) != joueurCourant.Couleur );
                     
-                grilleJeu.recupererJeton(ligneRecupJeton, colonneRecupJeton);
+                Jeton jetonRecuperer = grilleJeu.recupererJeton(ligneRecupJeton, colonneRecupJeton);
+                joueurCourant.ajouterJeton(jetonRecuperer);
                 grilleJeu.tasserGrille(colonneRecupJeton);
+                
                 if(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true){
                     System.out.println("Vous avez provoqué une faute de jeu, Vous avez perdu !");
+                    if (joueurCourant==ListeJoueur[0]) {
+                       joueurCourant=ListeJoueur[1];
+                    }
+                    else {
+                        joueurCourant=ListeJoueur[0]; 
+                    }
                     break;
                 }
             }
