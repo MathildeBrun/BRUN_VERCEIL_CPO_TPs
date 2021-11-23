@@ -172,7 +172,17 @@ public class Partie {
                         System.out.println("Entrez la colonne :");
                         colonneJoueur = sc.nextInt() - 1;
                     }
-                    
+                    grilleJeu.tasserGrille(colonneJoueur);
+                    if(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true){
+                        System.out.println("Vous avez provoqué une faute de jeu, Vous avez perdu !");
+                        if (joueurCourant==ListeJoueur[0]) {
+                            joueurCourant=ListeJoueur[1];
+                        }
+                        else {
+                            joueurCourant=ListeJoueur[0]; 
+                        }
+                        break;
+                    }
                 }
             }
             
