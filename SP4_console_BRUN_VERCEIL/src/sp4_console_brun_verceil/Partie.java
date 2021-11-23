@@ -71,11 +71,13 @@ public class Partie {
             Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
-            if(grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+            if(grilleJeu.CellulesJeu[ligne][colonne].trouNoir == true && grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+                grilleJeu.CellulesJeu[ligne][colonne].desintegrateur=false;
+            }
+            else if(grilleJeu.CellulesJeu[ligne][colonne].trouNoir == false && grilleJeu.placerDesintegrateur(ligne,colonne)==true) {
                 desintegrateurPlaces++;
             }
         }
-        
     }
         
     public void debuterPartie() {
