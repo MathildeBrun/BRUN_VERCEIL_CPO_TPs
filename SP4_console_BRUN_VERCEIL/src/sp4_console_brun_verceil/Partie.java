@@ -156,12 +156,15 @@ public class Partie {
                 joueurCourant.nombreJetonsRestants--;
                 
                 // Le joueur récupère ou non un désintégrateur
+                
+                // On cherche la ligne pour avoir les coordonné
                 int i=0;
                 while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null & i !=5 ) {
                     i++;
                 }
+                // Si la cellule en question a un désintégrateur le joueur le récupère
                 if(grilleJeu.CellulesJeu[i-1][colonneJoueur].desintegrateur==true){
-                    System.out.println("BLABLA");
+                    System.out.println("\n" + joueurCourant.Nom + " a récupéré un désintégrateur\n");
                     joueurCourant.obtenirDesintegrateur();
                     grilleJeu.CellulesJeu[i-1][colonneJoueur].recupererDesintegrateur();
                 }
@@ -178,7 +181,7 @@ public class Partie {
                     ligneJoueur = sc.nextInt() - 1;
                     System.out.println("Entrez la colonne :");
                     colonneJoueur = sc.nextInt() - 1;
-                    while(grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur]==null || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur].lireCouleurDuJeton()==joueurCourant.Couleur){
+                    while(grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur].jetonCourant==null || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur].lireCouleurDuJeton()==joueurCourant.Couleur){
                         System.out.println("Vous ne pouvez pas utiliser de désintégrateur ici, veuillez réessayer à un autre endroit.");
                         System.out.println("Entrez la ligne :");
                         ligneJoueur = sc.nextInt() - 1;
