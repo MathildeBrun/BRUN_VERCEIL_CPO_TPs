@@ -111,12 +111,11 @@ public class Partie {
                         ligneRecupJeton = sc.nextInt() -1;
 
                         System.out.println("Entrer la colonne :");
-                        colonneRecupJeton = sc.nextInt() -1;    
+                        colonneRecupJeton = sc.nextInt() -1;
 
 
                         } while (colonneRecupJeton < 0 || colonneRecupJeton > 6 || ligneRecupJeton < 0 || ligneRecupJeton > 5);
-        
-                } while (grilleJeu.lireCouleurDuJeton(ligneRecupJeton, colonneRecupJeton) != joueurCourant.Couleur );
+                } while (grilleJeu.lireCouleurDuJeton(ligneRecupJeton,colonneRecupJeton)!= joueurCourant.Couleur);
                     
                 Jeton jetonRecuperer = grilleJeu.recupererJeton(ligneRecupJeton, colonneRecupJeton);
                 joueurCourant.ajouterJeton(jetonRecuperer);
@@ -133,9 +132,6 @@ public class Partie {
                     break;
                 }
             }
-            
-            
-            
             
             if (choix==2){
                 System.out.println("Dans quelle colonne voulez-vous mettre un jeton ?");
@@ -155,12 +151,12 @@ public class Partie {
 
                 // le joueur à un jeton en moins
                 joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
-                joueurCourant.nombreJetonsRestants --;
+                joueurCourant.nombreJetonsRestants--;
             }
             
             if (choix==3){
                 if(joueurCourant.nombreDesintegrateursPossession==0){
-                    System.out.println("Vous n'avez pas de désintégrateur, vous ne pouvez pas jouer.");
+                    System.out.println("Vous n'avez pas de désintégrateur, vous ne pouvez donc pas en utiliser. Au tour du joueur suivant.");
                 }
                 else{
                     int ligneJoueur;
@@ -169,13 +165,14 @@ public class Partie {
                     ligneJoueur = sc.nextInt() - 1;
                     System.out.println("Entrez la colonne :");
                     colonneJoueur = sc.nextInt() - 1;
-                    while(grilleJeu.supprimerJeton(ligneJoueur, colonneJoueur) == false || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur]==null){
+                    while(grilleJeu.supprimerJeton(ligneJoueur, colonneJoueur) == false || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur]==null || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur].lireCouleurDuJeton()==joueurCourant.Couleur){
                         System.out.println("Vous ne pouvez pas utiliser de désintégrateur ici, veuillez réessayer à un autre endroit.");
                         System.out.println("Entrez la ligne :");
                         ligneJoueur = sc.nextInt() - 1;
                         System.out.println("Entrez la colonne :");
                         colonneJoueur = sc.nextInt() - 1;
                     }
+                    
                 }
             }
             
