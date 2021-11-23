@@ -41,8 +41,9 @@ public class Grille {
         else {
             int i = 0;
             while (CellulesJeu[i][nouvelleColonne].jetonCourant != null & i !=5 ) {
-                i++;         
+                i++;
             }
+          
         // On affecte le nouveaux jetons à la Cellule
             return (CellulesJeu[i][nouvelleColonne].affecterJeton(nouveauJetonColonne));
         }
@@ -211,8 +212,8 @@ public class Grille {
     
     // SupprimerJeton
     public boolean supprimerJeton(int number1, int number2){
-        if (CellulesJeu[number1][number2]!=null){
-            CellulesJeu[number1][number2]=null;
+        if (CellulesJeu[number1][number2].jetonCourant!=null){
+            CellulesJeu[number1][number2].jetonCourant=null;
             return(true);
         }
         return(false);
@@ -225,5 +226,6 @@ public class Grille {
         CellulesJeu[numLigne][numColonne].jetonCourant = null;
         return(refJeton);
     }
+    
 
 }

@@ -154,10 +154,21 @@ public class Partie {
                 // le joueur à un jeton en moins
                 joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
                 joueurCourant.nombreJetonsRestants--;
+                
+                // Le joueur récupère ou non un désintégrateur
+                int i=0;
+                while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null & i !=5 ) {
+                    i++;
+                }
+                if(grilleJeu.CellulesJeu[i-1][colonneJoueur].desintegrateur==true){
+                    System.out.println("BLABLA");
+                    joueurCourant.obtenirDesintegrateur();
+                    grilleJeu.CellulesJeu[i-1][colonneJoueur].recupererDesintegrateur();
+                }
             }
             
             if (choix==3){
-                if(joueurCourant.nombreDesintegrateursPossession==0){
+                if(joueurCourant.nombreDesintegrateurs==0){
                     System.out.println("Vous n'avez pas de désintégrateur, vous ne pouvez donc pas en utiliser. Au tour du joueur suivant.");
                 }
                 else{
@@ -167,14 +178,16 @@ public class Partie {
                     ligneJoueur = sc.nextInt() - 1;
                     System.out.println("Entrez la colonne :");
                     colonneJoueur = sc.nextInt() - 1;
-                    while(grilleJeu.supprimerJeton(ligneJoueur, colonneJoueur) == false || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur]==null || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur].lireCouleurDuJeton()==joueurCourant.Couleur){
+                    while(grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur]==null || grilleJeu.CellulesJeu[ligneJoueur][colonneJoueur].lireCouleurDuJeton()==joueurCourant.Couleur){
                         System.out.println("Vous ne pouvez pas utiliser de désintégrateur ici, veuillez réessayer à un autre endroit.");
                         System.out.println("Entrez la ligne :");
                         ligneJoueur = sc.nextInt() - 1;
                         System.out.println("Entrez la colonne :");
                         colonneJoueur = sc.nextInt() - 1;
                     }
+                    grilleJeu.supprimerJeton(ligneJoueur, colonneJoueur);
                     grilleJeu.tasserGrille(colonneJoueur);
+                    joueurCourant.utiliserDesintegrateur();
                     if(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true){
                         System.out.println("Vous avez provoqué une faute de jeu, Vous avez perdu !");
                         if (joueurCourant==ListeJoueur[0]) {

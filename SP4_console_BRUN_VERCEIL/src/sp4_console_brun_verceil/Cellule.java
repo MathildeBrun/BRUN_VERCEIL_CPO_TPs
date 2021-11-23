@@ -96,17 +96,6 @@ public class Cellule {
         }
     }
 
-    public boolean activerTrouNoir(){
-        if(trouNoir==true){
-            jetonCourant=null;
-            trouNoir=false;
-            return(true);
-        }
-        else{
-            return(false);
-        }
-    }
-
     public boolean presenceDesintegrateur(){
         if(desintegrateur==true){
             return(true);
@@ -120,5 +109,16 @@ public class Cellule {
             return(true);
         }
         return(false);
+    }
+    
+    public boolean activerTrouNoir(){
+        if(trouNoir==true){
+            jetonCourant=null;
+            trouNoir=false;
+            return(true);
+        }
+        else{
+            return(false);
+        }
     }
 }
