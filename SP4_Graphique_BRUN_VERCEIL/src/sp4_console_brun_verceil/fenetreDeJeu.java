@@ -230,6 +230,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_info_joueurs.setVisible(true);
         panneau_info_partie.setVisible(true);
         initialiserPartie();
+        panneau_grille.repaint();
+        
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**

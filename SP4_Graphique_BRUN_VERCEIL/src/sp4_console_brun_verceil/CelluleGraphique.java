@@ -37,7 +37,7 @@ public class CelluleGraphique extends JButton {
             String couleur_jeton = celluleAssociee.lireCouleurDuJeton();
             switch (couleur_jeton) {
                 case "none":
-                    setIcon(img_desint);
+                    setIcon(img_vide);
                     break;
                 case "Rouge":
                     setIcon(img_jetonRouge);
@@ -49,7 +49,6 @@ public class CelluleGraphique extends JButton {
             }
         }
 
-        setIcon(img_vide); // Attribution image cellule vide
     }
 
 }
