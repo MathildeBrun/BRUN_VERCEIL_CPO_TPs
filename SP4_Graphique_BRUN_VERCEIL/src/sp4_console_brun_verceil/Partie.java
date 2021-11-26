@@ -48,6 +48,8 @@ public class Partie {
             Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
+        
+        // Placement 3 premiers trous noirs
         int trouNoirPlaces = 0;
         while(trouNoirPlaces<3){
             Random generateurAleat = new Random();
@@ -57,6 +59,8 @@ public class Partie {
                 trouNoirPlaces++;
             }
         }
+        
+        // Placement des 2 désintegrateurs qui se trouve sous les trous noirs et des trous noirs associés
         int desintegrateurTNPlaces=0;
         while(desintegrateurTNPlaces<2){
             Random generateurAleat = new Random();
@@ -66,6 +70,8 @@ public class Partie {
                 desintegrateurTNPlaces++;
             }
         }
+        
+        // Placement des 3 dernier désintegrateurs
         int desintegrateurPlaces=0;        
         while(desintegrateurPlaces<3){
             Random generateurAleat = new Random();

@@ -4,6 +4,8 @@
  */
 package sp4_console_brun_verceil;
 
+import java.util.Random;
+
 /**
  *
  * @author thvel
@@ -90,12 +92,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel2.setText("Nom Joueur 1 :");
         panneau_creation_partie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
+        nom_joueur2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         nom_joueur2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nom_joueur2ActionPerformed(evt);
             }
         });
         panneau_creation_partie.add(nom_joueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 180, 25));
+
+        nom_joueur1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         panneau_creation_partie.add(nom_joueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 180, 25));
 
         btn_start.setText("Démarrer la partie");
@@ -224,6 +229,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
         panneau_info_joueurs.setVisible(true);
         panneau_info_partie.setVisible(true);
+        initialiserPartie();
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -259,6 +265,80 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 new fenetreDeJeu().setVisible(true);
             }
         });
+    }
+    
+    public void initialiserPartie() {
+        String nomJoueur1 = nom_joueur1.getText();
+        Joueur joueur1 = new Joueur(nomJoueur1);
+        
+        String nomJoueur2 = nom_joueur2.getText();
+        Joueur joueur2 = new Joueur(nomJoueur2);
+        
+        ListeJoueur[0] = joueur1;
+        ListeJoueur[1] = joueur2;
+        
+        attribuerCouleursAuxJoueurs();
+        
+        System.out.println(joueur1.Nom + " est de couleur "+ joueur1.Couleur);
+        System.out.println(joueur2.Nom + " est de couleur "+ joueur2.Couleur);
+        
+        for (int i =0; i<21; i++) {
+            Jeton JetonJoueur1 = new Jeton(ListeJoueur[0].Couleur);
+            ListeJoueur[0].ajouterJeton(JetonJoueur1);
+        }
+        for (int j= 0; j<21;j++) {
+            Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
+            ListeJoueur[1].ajouterJeton(JetonJoueur2);
+        }
+        
+        // Placement 3 premiers trous noirs
+        int trouNoirPlaces = 0;
+        while(trouNoirPlaces<3){
+            Random generateurAleat = new Random();
+            int ligne = generateurAleat.nextInt(5);
+            int colonne = generateurAleat.nextInt(6);
+            if(grilleJeu.placerTrouNoir(ligne,colonne)==true){
+                trouNoirPlaces++;
+            }
+        }
+        
+        // Placement des 2 désintegrateurs qui se trouve sous les trous noirs et des trous noirs associés
+        int desintegrateurTNPlaces=0;
+        while(desintegrateurTNPlaces<2){
+            Random generateurAleat = new Random();
+            int ligne = generateurAleat.nextInt(5);
+            int colonne = generateurAleat.nextInt(6);
+            if(grilleJeu.placerTrouNoir(ligne,colonne)==true && grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+                desintegrateurTNPlaces++;
+            }
+        }
+        
+        // Placement des 3 dernier désintegrateurs
+        int desintegrateurPlaces=0;        
+        while(desintegrateurPlaces<3){
+            Random generateurAleat = new Random();
+            int ligne = generateurAleat.nextInt(5);
+            int colonne = generateurAleat.nextInt(6);
+            if(grilleJeu.CellulesJeu[ligne][colonne].trouNoir == true && grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+                grilleJeu.CellulesJeu[ligne][colonne].desintegrateur=false;
+            }
+            else if(grilleJeu.CellulesJeu[ligne][colonne].trouNoir == false && grilleJeu.placerDesintegrateur(ligne,colonne)==true) {
+                desintegrateurPlaces++;
+            }
+        }
+    }
+    
+    public void attribuerCouleursAuxJoueurs() {
+        Random generateurAleat = new Random();
+        int num = generateurAleat.nextInt(1);
+        if (num==1){
+            ListeJoueur[0].Couleur = "Rouge";
+            ListeJoueur[1].Couleur = "Jaune";
+        }
+        else {
+            ListeJoueur[0].Couleur = "Jaune";
+            ListeJoueur[1].Couleur = "Rouge";
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
