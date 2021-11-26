@@ -101,6 +101,7 @@ public class Partie {
             
             // Demande action joueur
             System.out.println("A vous de jouer " + joueurCourant.Nom);
+            System.out.println("Il vous reste" + joueurCourant.nombreDesintegrateurs + "désintégrateurs");
             System.out.println("Souhaitez-vous :\n1) Récuperer un jeton \n2) Placer un jeton \n3) Utiliser un désintégrateur");
             Scanner sc = new Scanner(System.in); 
             int choix = sc.nextInt();
