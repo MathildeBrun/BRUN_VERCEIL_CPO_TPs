@@ -148,27 +148,25 @@ public class Partie {
                     }
 
                     } while (colonneJoueur < 0 || colonneJoueur >6 || grilleJeu.colonneRemplie(colonneJoueur) == true);
-
+                
+                // On cherche la ligne pour avoir les coordonnées
+                int i=0;
+                while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null && i !=5 ) {
+                    i++;
+                }
+                // Si la cellule en question a un désintégrateur le joueur le récupère
+                if(grilleJeu.CellulesJeu[i][colonneJoueur].desintegrateur==true){
+                    System.out.println("\n" + joueurCourant.Nom + " a récupéré un désintégrateur\n");
+                    joueurCourant.obtenirDesintegrateur();
+                    grilleJeu.CellulesJeu[i][colonneJoueur].recupererDesintegrateur();
+                }
+                
                 // Ajout du jeton
                 grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
 
                 // le joueur à un jeton en moins
                 joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
                 joueurCourant.nombreJetonsRestants--;
-                
-                // Le joueur récupère ou non un désintégrateur
-                
-                // On cherche la ligne pour avoir les coordonné
-                int i=0;
-                while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null & i !=5 ) {
-                    i++;
-                }
-                // Si la cellule en question a un désintégrateur le joueur le récupère
-                if(grilleJeu.CellulesJeu[i-1][colonneJoueur].desintegrateur==true){
-                    System.out.println("\n" + joueurCourant.Nom + " a récupéré un désintégrateur\n");
-                    joueurCourant.obtenirDesintegrateur();
-                    grilleJeu.CellulesJeu[i-1][colonneJoueur].recupererDesintegrateur();
-                }
             }
             
             if (choix==3){
