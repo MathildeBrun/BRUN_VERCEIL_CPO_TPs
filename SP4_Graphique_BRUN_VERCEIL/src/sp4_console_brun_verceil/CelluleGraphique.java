@@ -5,6 +5,8 @@
  */
 package sp4_console_brun_verceil;
 
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -13,8 +15,17 @@ import javax.swing.JButton;
  */
 public class CelluleGraphique extends JButton {
     Cellule celluleAssociee;
+    ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide.png"));
     
     public CelluleGraphique (Cellule uneCellule) {
         celluleAssociee = uneCellule;
     }
+    
+    
+    @Override
+    public void paintComponent (Graphics G) {
+        super.paintComponent(G);
+        setIcon(img_vide); // Attributionimage cellule vide
+    }
+    
 }
