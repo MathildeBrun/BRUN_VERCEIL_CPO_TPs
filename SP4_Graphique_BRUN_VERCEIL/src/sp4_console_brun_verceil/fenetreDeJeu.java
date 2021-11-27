@@ -231,7 +231,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_info_partie.setVisible(true);
         initialiserPartie();
         panneau_grille.repaint();
-        
+        btn_start.setEnabled(false);
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -284,6 +284,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         System.out.println(joueur1.Nom + " est de couleur "+ joueur1.Couleur);
         System.out.println(joueur2.Nom + " est de couleur "+ joueur2.Couleur);
         
+        lbl_j1_nom.setText(nomJoueur1);
+        lbl_j2_nom.setText(nomJoueur2);
+        lbl_j1_couleur.setText(joueur1.Couleur);
+        lbl_j2_couleur.setText(joueur2.Couleur);
+        lbl_j1_desint.setText(joueur1.nombreDesintegrateurs+"");
+        lbl_j2_desint.setText(joueur2.nombreDesintegrateurs+"");        
+        
+       
         for (int i =0; i<21; i++) {
             Jeton JetonJoueur1 = new Jeton(ListeJoueur[0].Couleur);
             ListeJoueur[0].ajouterJeton(JetonJoueur1);
@@ -292,6 +300,18 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
+        
+        // Détermination du 1er joueur
+        Random player = new Random();
+        boolean premierJoueur = player.nextBoolean();
+        if(premierJoueur) {
+            joueurCourant = ListeJoueur[0];
+        }
+        else{
+            joueurCourant = ListeJoueur[1];
+        }
+        
+        lbl_jcourant.setText(joueurCourant.Nom);
         
         // Placement 3 premiers trous noirs
         int trouNoirPlaces = 0;
@@ -303,6 +323,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 trouNoirPlaces++;
             }
         }
+        
         
         // Placement des 2 désintegrateurs qui se trouve sous les trous noirs et des trous noirs associés
         int desintegrateurTNPlaces=0;
