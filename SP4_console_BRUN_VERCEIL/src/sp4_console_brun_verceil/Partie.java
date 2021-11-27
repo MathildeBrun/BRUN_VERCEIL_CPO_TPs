@@ -38,16 +38,29 @@ public class Partie {
         }
     }
     
-    public void initialiserPartie() {
-        attribuerCouleursAuxJoueurs();
+    public void initialiserPartie() {     
+       attribuerCouleursAuxJoueurs();
+        
         for (int i =0; i<21; i++) {
             Jeton JetonJoueur1 = new Jeton(ListeJoueur[0].Couleur);
             ListeJoueur[0].ajouterJeton(JetonJoueur1);
         }
+        
         for (int j= 0; j<21;j++) {
             Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
+        
+        // Détermination du 1er joueur
+        Random player = new Random();
+        boolean premierJoueur = player.nextBoolean();
+        if(premierJoueur) {
+            joueurCourant = ListeJoueur[0];
+        }
+        else{
+            joueurCourant = ListeJoueur[1];
+        }
+        
         int trouNoirPlaces = 0;
         while(trouNoirPlaces<3){
             Random generateurAleat = new Random();
@@ -57,6 +70,7 @@ public class Partie {
                 trouNoirPlaces++;
             }
         }
+        
         int desintegrateurTNPlaces=0;
         while(desintegrateurTNPlaces<2){
             Random generateurAleat = new Random();
