@@ -246,11 +246,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_col_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_0ActionPerformed
         joueurSuivant();
         jouerDansColonne(0);
+        if (grilleJeu.colonneRemplie(0))
+            btn_col_0.setEnabled(false);
     }//GEN-LAST:event_btn_col_0ActionPerformed
 
     private void btn_col_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_2ActionPerformed
         joueurSuivant();
         jouerDansColonne(2);
+        if (grilleJeu.colonneRemplie(2))
+            btn_col_2.setEnabled(false);
     }//GEN-LAST:event_btn_col_2ActionPerformed
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
@@ -264,77 +268,82 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_col_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_1ActionPerformed
         joueurSuivant();
         jouerDansColonne(1);
+        if (grilleJeu.colonneRemplie(1))
+            btn_col_1.setEnabled(false);
     }//GEN-LAST:event_btn_col_1ActionPerformed
 
     private void btn_col_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_3ActionPerformed
         joueurSuivant();
         jouerDansColonne(3);
+        if (grilleJeu.colonneRemplie(3))
+            btn_col_3.setEnabled(false);
     }//GEN-LAST:event_btn_col_3ActionPerformed
 
     private void btn_col_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_4ActionPerformed
         joueurSuivant();
         jouerDansColonne(4);
+        if (grilleJeu.colonneRemplie(4))
+            btn_col_4.setEnabled(false);
     }//GEN-LAST:event_btn_col_4ActionPerformed
 
     private void btn_col_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_6ActionPerformed
         joueurSuivant();
         jouerDansColonne(5);
+        if (grilleJeu.colonneRemplie(5))
+            btn_col_6.setEnabled(false);
     }//GEN-LAST:event_btn_col_6ActionPerformed
 
     private void btn_col_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_5ActionPerformed
         joueurSuivant();
         jouerDansColonne(6);
+        if (grilleJeu.colonneRemplie(6))
+            btn_col_5.setEnabled(false);
     }//GEN-LAST:event_btn_col_5ActionPerformed
-    
-    
+
     public boolean jouerDansColonne(int colonneJoueur) {
         // message d'erreur 
-        
+
         if (grilleJeu.colonneRemplie(colonneJoueur) == true) {
-            System.out.println("Cette colonne est déjà remplie, veuillez placer votre pion dans une autre colonne."); 
+            System.out.println("Cette colonne est déjà remplie, veuillez placer votre pion dans une autre colonne.");
             return false;
         }
-         
 
-    // On cherche la ligne pour avoir les coordonnées
-    int i=0;
-    while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null && i !=5 ) {
-        i++;
-    }
-    // Si la cellule en question a un désintégrateur le joueur le récupère
-    if(grilleJeu.CellulesJeu[i][colonneJoueur].desintegrateur==true){
-        System.out.println("\n" + joueurCourant.Nom + " a récupéré un désintégrateur\n");
-        joueurCourant.obtenirDesintegrateur();
-        grilleJeu.CellulesJeu[i][colonneJoueur].recupererDesintegrateur();
-    }
-
-    // Ajout du jeton
-    grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
-
-    // le joueur à un jeton en moins
-    joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
-    joueurCourant.nombreJetonsRestants--;
-    
-    // On rafraichie 
-    panneau_grille.repaint();
-        return true;
-        
-    }
-
-
-
-
-    public void joueurSuivant(){
-        if (joueurCourant==ListeJoueur[0]){
-            joueurCourant =ListeJoueur[1];
+        // On cherche la ligne pour avoir les coordonnées
+        int i = 0;
+        while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null && i != 5) {
+            i++;
         }
-        else {
+        // Si la cellule en question a un désintégrateur le joueur le récupère
+        if (grilleJeu.CellulesJeu[i][colonneJoueur].desintegrateur == true) {
+            System.out.println("\n" + joueurCourant.Nom + " a récupéré un désintégrateur\n");
+            joueurCourant.obtenirDesintegrateur();
+            grilleJeu.CellulesJeu[i][colonneJoueur].recupererDesintegrateur();
+        }
+
+        // Ajout du jeton
+        grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1], colonneJoueur);
+
+        // le joueur à un jeton en moins
+        joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1] = null;
+        joueurCourant.nombreJetonsRestants--;
+
+        // On rafraichie la grille est les données
+        lbl_j1_desint.setText(ListeJoueur[0].nombreDesintegrateurs+"");
+        lbl_j1_desint.setText(ListeJoueur[1].nombreDesintegrateurs+"");
+        panneau_grille.repaint();
+        return true;
+
+    }
+
+    public void joueurSuivant() {
+        if (joueurCourant == ListeJoueur[0]) {
+            joueurCourant = ListeJoueur[1];
+        } else {
             joueurCourant = ListeJoueur[0];
         }
         lbl_jcourant.setText(joueurCourant.Nom);
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -369,97 +378,92 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void initialiserPartie() {
         String nomJoueur1 = nom_joueur1.getText();
         Joueur joueur1 = new Joueur(nomJoueur1);
-        
+
         String nomJoueur2 = nom_joueur2.getText();
         Joueur joueur2 = new Joueur(nomJoueur2);
-        
+
         ListeJoueur[0] = joueur1;
         ListeJoueur[1] = joueur2;
-        
+
         attribuerCouleursAuxJoueurs();
-        
-        System.out.println(joueur1.Nom + " est de couleur "+ joueur1.Couleur);
-        System.out.println(joueur2.Nom + " est de couleur "+ joueur2.Couleur);
-        
+
+        System.out.println(joueur1.Nom + " est de couleur " + joueur1.Couleur);
+        System.out.println(joueur2.Nom + " est de couleur " + joueur2.Couleur);
+
         lbl_j1_nom.setText(nomJoueur1);
         lbl_j2_nom.setText(nomJoueur2);
         lbl_j1_couleur.setText(joueur1.Couleur);
         lbl_j2_couleur.setText(joueur2.Couleur);
-        lbl_j1_desint.setText(joueur1.nombreDesintegrateurs+"");
-        lbl_j2_desint.setText(joueur2.nombreDesintegrateurs+"");        
-        
-       
-        for (int i =0; i<21; i++) {
+        lbl_j1_desint.setText(joueur1.nombreDesintegrateurs + "");
+        lbl_j2_desint.setText(joueur2.nombreDesintegrateurs + "");
+
+        for (int i = 0; i < 21; i++) {
             Jeton JetonJoueur1 = new Jeton(ListeJoueur[0].Couleur);
             ListeJoueur[0].ajouterJeton(JetonJoueur1);
         }
-        for (int j= 0; j<21;j++) {
+        for (int j = 0; j < 21; j++) {
             Jeton JetonJoueur2 = new Jeton(ListeJoueur[1].Couleur);
             ListeJoueur[1].ajouterJeton(JetonJoueur2);
         }
-        
+
         // Détermination du 1er joueur
         Random player = new Random();
         boolean premierJoueur = player.nextBoolean();
-        if(premierJoueur) {
+        if (premierJoueur) {
             joueurCourant = ListeJoueur[0];
-        }
-        else{
+        } else {
             joueurCourant = ListeJoueur[1];
         }
-        
+
         lbl_jcourant.setText(joueurCourant.Nom);
-        
+
         // Placement 3 premiers trous noirs
         int trouNoirPlaces = 0;
-        while(trouNoirPlaces<3){
+        while (trouNoirPlaces < 3) {
             Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
-            if(grilleJeu.placerTrouNoir(ligne,colonne)==true){
+            if (grilleJeu.placerTrouNoir(ligne, colonne) == true) {
                 trouNoirPlaces++;
             }
         }
-        
-        
+
         // Placement des 2 désintegrateurs qui se trouve sous les trous noirs et des trous noirs associés
-        int desintegrateurTNPlaces=0;
-        while(desintegrateurTNPlaces<2){
+        int desintegrateurTNPlaces = 0;
+        while (desintegrateurTNPlaces < 2) {
             Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
-            if(grilleJeu.placerTrouNoir(ligne,colonne)==true && grilleJeu.placerDesintegrateur(ligne,colonne)==true){
+            if (grilleJeu.placerTrouNoir(ligne, colonne) == true && grilleJeu.placerDesintegrateur(ligne, colonne) == true) {
                 desintegrateurTNPlaces++;
             }
         }
-        
+
         // Placement des 3 dernier désintegrateurs
-        int desintegrateurPlaces=0;        
-        while(desintegrateurPlaces<3){
+        int desintegrateurPlaces = 0;
+        while (desintegrateurPlaces < 3) {
             Random generateurAleat = new Random();
             int ligne = generateurAleat.nextInt(5);
             int colonne = generateurAleat.nextInt(6);
-            if(grilleJeu.CellulesJeu[ligne][colonne].trouNoir == true && grilleJeu.placerDesintegrateur(ligne,colonne)==true){
-                grilleJeu.CellulesJeu[ligne][colonne].desintegrateur=false;
-            }
-            else if(grilleJeu.CellulesJeu[ligne][colonne].trouNoir == false && grilleJeu.placerDesintegrateur(ligne,colonne)==true) {
+            if (grilleJeu.CellulesJeu[ligne][colonne].trouNoir == true && grilleJeu.placerDesintegrateur(ligne, colonne) == true) {
+                grilleJeu.CellulesJeu[ligne][colonne].desintegrateur = false;
+            } else if (grilleJeu.CellulesJeu[ligne][colonne].trouNoir == false && grilleJeu.placerDesintegrateur(ligne, colonne) == true) {
                 desintegrateurPlaces++;
             }
         }
     }
-    
+
     public void attribuerCouleursAuxJoueurs() {
         Random generateurAleat = new Random();
         int num = generateurAleat.nextInt(1);
-        if (num==1){
+        if (num == 1) {
             ListeJoueur[0].Couleur = "Rouge";
             ListeJoueur[1].Couleur = "Jaune";
-        }
-        else {
+        } else {
             ListeJoueur[0].Couleur = "Jaune";
             ListeJoueur[1].Couleur = "Rouge";
         }
