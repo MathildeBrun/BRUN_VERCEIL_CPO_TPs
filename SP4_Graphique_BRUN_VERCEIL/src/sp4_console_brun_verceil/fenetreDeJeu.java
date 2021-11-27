@@ -245,10 +245,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     private void btn_col_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_0ActionPerformed
         joueurSuivant();
+        jouerDansColonne(0);
     }//GEN-LAST:event_btn_col_0ActionPerformed
 
     private void btn_col_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_2ActionPerformed
         joueurSuivant();
+        jouerDansColonne(2);
     }//GEN-LAST:event_btn_col_2ActionPerformed
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
@@ -261,24 +263,67 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     private void btn_col_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_1ActionPerformed
         joueurSuivant();
+        jouerDansColonne(1);
     }//GEN-LAST:event_btn_col_1ActionPerformed
 
     private void btn_col_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_3ActionPerformed
         joueurSuivant();
+        jouerDansColonne(3);
     }//GEN-LAST:event_btn_col_3ActionPerformed
 
     private void btn_col_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_4ActionPerformed
         joueurSuivant();
+        jouerDansColonne(4);
     }//GEN-LAST:event_btn_col_4ActionPerformed
 
     private void btn_col_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_6ActionPerformed
         joueurSuivant();
+        jouerDansColonne(5);
     }//GEN-LAST:event_btn_col_6ActionPerformed
 
     private void btn_col_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_5ActionPerformed
         joueurSuivant();
+        jouerDansColonne(6);
     }//GEN-LAST:event_btn_col_5ActionPerformed
     
+    
+    public boolean jouerDansColonne(int colonneJoueur) {
+        // message d'erreur 
+        
+        if (grilleJeu.colonneRemplie(colonneJoueur) == true) {
+            System.out.println("Cette colonne est déjà remplie, veuillez placer votre pion dans une autre colonne."); 
+            return false;
+        }
+         
+
+    // On cherche la ligne pour avoir les coordonnées
+    int i=0;
+    while (grilleJeu.CellulesJeu[i][colonneJoueur].jetonCourant != null && i !=5 ) {
+        i++;
+    }
+    // Si la cellule en question a un désintégrateur le joueur le récupère
+    if(grilleJeu.CellulesJeu[i][colonneJoueur].desintegrateur==true){
+        System.out.println("\n" + joueurCourant.Nom + " a récupéré un désintégrateur\n");
+        joueurCourant.obtenirDesintegrateur();
+        grilleJeu.CellulesJeu[i][colonneJoueur].recupererDesintegrateur();
+    }
+
+    // Ajout du jeton
+    grilleJeu.ajouterJetonDansColonne(joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1], colonneJoueur);
+
+    // le joueur à un jeton en moins
+    joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants-1] = null;
+    joueurCourant.nombreJetonsRestants--;
+    
+    // On rafraichie 
+    panneau_grille.repaint();
+        return true;
+        
+    }
+
+
+
+
     public void joueurSuivant(){
         if (joueurCourant==ListeJoueur[0]){
             joueurCourant =ListeJoueur[1];
