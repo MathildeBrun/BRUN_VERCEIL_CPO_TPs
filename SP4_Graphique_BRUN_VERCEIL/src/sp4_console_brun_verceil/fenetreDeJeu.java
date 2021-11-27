@@ -67,7 +67,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         lbl_jcourant = new javax.swing.JLabel();
         message = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textemessage = new javax.swing.JTextArea();
         btn_col_0 = new javax.swing.JButton();
         btn_col_1 = new javax.swing.JButton();
         btn_col_2 = new javax.swing.JButton();
@@ -172,9 +172,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         lbl_jcourant.setText("nomJoueur");
         panneau_info_partie.add(lbl_jcourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        message.setViewportView(jTextArea1);
+        textemessage.setColumns(20);
+        textemessage.setRows(5);
+        message.setViewportView(textemessage);
 
         panneau_info_partie.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 290, -1));
 
@@ -331,6 +331,27 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         lbl_j1_desint.setText(ListeJoueur[0].nombreDesintegrateurs+"");
         lbl_j1_desint.setText(ListeJoueur[1].nombreDesintegrateurs+"");
         panneau_grille.repaint();
+        
+        // Test de victoire
+        boolean vict_j1 = grilleJeu.etreGagnantePourJoueur(ListeJoueur[0]);
+        boolean vict_j2 = grilleJeu.etreGagnantePourJoueur(ListeJoueur[1]);
+        if (vict_j1 && ! vict_j2) {
+            textemessage.setText("Victoire de " + ListeJoueur[0]);
+        }
+        if (vict_j2 && ! vict_j1) {
+            textemessage.setText("Victoire de " + ListeJoueur[1]);
+        }
+        if (vict_j2 && vict_j1) {
+            if (joueurCourant == ListeJoueur[0] ) {
+                textemessage.setText("Victoire de " + ListeJoueur[1].Nom + "faute de jeu de l'autre joueur");
+            }
+        }
+        if (vict_j2 && vict_j1) {
+            if (joueurCourant == ListeJoueur[1] ) {
+                textemessage.setText("Victoire de " + ListeJoueur[0].Nom + "faute de jeu de l'autre joueur");
+            }
+        }
+        
         return true;
 
     }
@@ -490,7 +511,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lbl_j1_couleur;
     private javax.swing.JLabel lbl_j1_desint;
     private javax.swing.JLabel lbl_j1_nom;
@@ -505,5 +525,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_info_joueurs;
     private javax.swing.JPanel panneau_info_partie;
+    private javax.swing.JTextArea textemessage;
     // End of variables declaration//GEN-END:variables
 }
