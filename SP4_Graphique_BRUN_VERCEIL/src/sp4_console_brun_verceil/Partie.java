@@ -128,7 +128,7 @@ public class Partie {
                     
                 Jeton jetonRecuperer = grilleJeu.recupererJeton(ligneRecupJeton, colonneRecupJeton);
                 joueurCourant.ajouterJeton(jetonRecuperer);
-                grilleJeu.tasserGrille(colonneRecupJeton);
+                grilleJeu.tasserColonne(colonneRecupJeton);
                 
                 if(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true){
                     System.out.println("Vous avez provoqué une faute de jeu, Vous avez perdu !");
@@ -194,7 +194,7 @@ public class Partie {
                         colonneJoueur = sc.nextInt() - 1;
                     }
                     grilleJeu.supprimerJeton(ligneJoueur, colonneJoueur);
-                    grilleJeu.tasserGrille(colonneJoueur);
+                    grilleJeu.tasserColonne(colonneJoueur);
                     joueurCourant.utiliserDesintegrateur();
                     if(grilleJeu.etreGagnantePourJoueur(ListeJoueur[0])==true && grilleJeu.etreGagnantePourJoueur(ListeJoueur[1])==true){
                         System.out.println("Vous avez provoqué une faute de jeu, Vous avez perdu !");
