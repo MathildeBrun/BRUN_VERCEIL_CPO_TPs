@@ -64,10 +64,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                         boolean vict_j1 = grilleJeu.etreGagnantePourJoueur(ListeJoueur[0]);
                         boolean vict_j2 = grilleJeu.etreGagnantePourJoueur(ListeJoueur[1]);
                         if (vict_j1 && !vict_j2) {
-                            textemessage.setText("Victoire de " + ListeJoueur[0]);
+                            textemessage.setText("Victoire de " + ListeJoueur[0].Nom);
                         }
                         if (vict_j2 && !vict_j1) {
-                            textemessage.setText("Victoire de " + ListeJoueur[1]);
+                            textemessage.setText("Victoire de " + ListeJoueur[1].Nom);
                         }
                         if (vict_j2 && vict_j1) {
                             if (joueurCourant == ListeJoueur[0]) {
