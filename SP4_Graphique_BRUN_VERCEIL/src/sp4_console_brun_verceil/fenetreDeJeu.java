@@ -38,7 +38,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             textemessage.setText("le joueur " + joueurCourant.Nom + " récupère un de ses jetons");
                             Jeton jrecup = c.recupererJeton();
                             joueurCourant.ajouterJeton(jrecup);
+                            c.supprimerJeton();
                             joueurSuivant();
+                            
                         } else {
                             if (joueurCourant.nombreDesintegrateurs > 0) {
                                 textemessage.setText("le joueur " + joueurCourant.Nom + " désintégre un jeton");
@@ -48,13 +50,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                                 return;
                             }
                         }
-                        grilleJeu.tasserGrille(); // JSP POURSUOi ELLE FONCTIONNE PAS
+                        grilleJeu.tasserGrille(); // JSP POURQUOi ELLE FONCTIONNE PAS
                         
-                        /*
+                        
                         // LE COPIER COLLE !!!!!!!!!!!
+                        
                         // On rafraichie la grille est les données
                         lbl_j1_desint.setText(ListeJoueur[0].nombreDesintegrateurs + "");
-                        lbl_j1_desint.setText(ListeJoueur[1].nombreDesintegrateurs + "");
+                        lbl_j2_desint.setText(ListeJoueur[1].nombreDesintegrateurs + "");
                         panneau_grille.repaint();
 
                         // Test de victoire
@@ -76,7 +79,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                                 textemessage.setText("Victoire de " + ListeJoueur[0].Nom + "faute de jeu de l'autre joueur");
                             }
                         }
-                        // FIN DU COPIER COLLER */
+                        // FIN DU COPIER COLLER 
                     }
                 });
                 panneau_grille.add(cellGraph);
@@ -297,17 +300,17 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_nom_joueur2ActionPerformed
 
     private void btn_col_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_0ActionPerformed
-        joueurSuivant();
         jouerDansColonne(0);
         if (grilleJeu.colonneRemplie(0))
             btn_col_0.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_0ActionPerformed
 
     private void btn_col_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_2ActionPerformed
-        joueurSuivant();
-        jouerDansColonne(2);
+       jouerDansColonne(2);
         if (grilleJeu.colonneRemplie(2))
             btn_col_2.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_2ActionPerformed
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
@@ -319,38 +322,38 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_startActionPerformed
 
     private void btn_col_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_1ActionPerformed
-        joueurSuivant();
         jouerDansColonne(1);
         if (grilleJeu.colonneRemplie(1))
             btn_col_1.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_1ActionPerformed
 
     private void btn_col_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_3ActionPerformed
-        joueurSuivant();
         jouerDansColonne(3);
         if (grilleJeu.colonneRemplie(3))
             btn_col_3.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_3ActionPerformed
 
     private void btn_col_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_4ActionPerformed
-        joueurSuivant();
-        jouerDansColonne(4);
+       jouerDansColonne(4);
         if (grilleJeu.colonneRemplie(4))
             btn_col_4.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_4ActionPerformed
 
     private void btn_col_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_6ActionPerformed
-        joueurSuivant();
         jouerDansColonne(5);
         if (grilleJeu.colonneRemplie(5))
             btn_col_6.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_6ActionPerformed
 
     private void btn_col_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_5ActionPerformed
-        joueurSuivant();
         jouerDansColonne(6);
         if (grilleJeu.colonneRemplie(6))
             btn_col_5.setEnabled(false);
+        joueurSuivant();
     }//GEN-LAST:event_btn_col_5ActionPerformed
 
     public boolean jouerDansColonne(int colonneJoueur) {
@@ -382,7 +385,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         // On rafraichie la grille est les données
         lbl_j1_desint.setText(ListeJoueur[0].nombreDesintegrateurs + "");
-        lbl_j1_desint.setText(ListeJoueur[1].nombreDesintegrateurs + "");
+        lbl_j2_desint.setText(ListeJoueur[1].nombreDesintegrateurs + "");
         panneau_grille.repaint();
 
         // Test de victoire
